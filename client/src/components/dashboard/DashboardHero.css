@@ -45,3 +45,35 @@
   background:#6D8EF7 !important;
   color:white;
 }
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px){
+
+  .dashboard-hero{
+    padding:40px 20px;
+  }
+
+  .dashboard-hero p{
+    font-size:14px;
+  }
+
+  .dashboard-hero h1{
+    font-size:34px;
+    line-height:46px;
+    letter-spacing:-1px;
+    margin-bottom:28px;
+  }
+
+  .dashboard-filters{
+    gap:12px;
+  }
+
+  .dashboard-filters button{
+    width:100%;
+    text-align:center;
+    padding:12px 18px;
+    font-size:14px;
+  }
+
+}

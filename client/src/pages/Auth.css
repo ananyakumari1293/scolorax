@@ -152,3 +152,97 @@
   margin-left:6px;
   cursor:pointer;
 }
+
+/* TABLET */
+
+@media (max-width: 992px){
+
+  .auth-page{
+    flex-direction:column;
+  }
+
+  .auth-left,
+  .auth-right{
+    width:100%;
+  }
+
+  .auth-left{
+    padding:50px 40px;
+  }
+
+  .auth-right{
+    padding:50px 40px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+  .auth-page{
+    flex-direction:column;
+  }
+
+  .auth-left{
+    padding:40px 20px;
+  }
+
+  .auth-overlay h1{
+    font-size:42px;
+    line-height:52px;
+  }
+
+  .auth-description{
+    font-size:15px;
+    line-height:28px;
+  }
+
+  .auth-points{
+    font-size:15px;
+    gap:14px;
+  }
+
+  .auth-right{
+    padding:30px 20px 50px;
+  }
+
+  .auth-card{
+    padding:28px 22px;
+    border-radius:24px;
+  }
+
+  .auth-card h2{
+    font-size:30px;
+  }
+
+  .auth-subtitle{
+    font-size:14px;
+    line-height:24px;
+    margin-bottom:28px;
+  }
+
+  .name-fields{
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .auth-form input,
+  .auth-form select{
+    padding:14px 16px;
+    border-radius:14px;
+    font-size:14px;
+  }
+
+  .auth-form button,
+  .google-btn{
+    padding:14px;
+    border-radius:16px;
+    font-size:14px;
+  }
+
+  .login-text{
+    font-size:14px;
+  }
+
+}

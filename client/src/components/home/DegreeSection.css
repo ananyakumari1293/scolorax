@@ -65,3 +65,59 @@
   line-height:28px;
   font-size:15px;
 }
+
+/* TABLET */
+
+@media (max-width: 992px){
+
+  .degree-section{
+    padding:40px 40px 80px;
+  }
+
+  .degree-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+  .degree-section{
+    padding:30px 20px 60px;
+  }
+
+  .degree-header{
+    margin-bottom:32px;
+  }
+
+  .degree-header h2{
+    font-size:30px;
+    line-height:42px;
+  }
+
+  .degree-grid{
+    grid-template-columns:1fr;
+    gap:18px;
+  }
+
+  .degree-card{
+    padding:22px;
+    border-radius:20px;
+  }
+
+  .degree-top h3{
+    font-size:22px;
+  }
+
+  .degree-top span{
+    font-size:20px;
+  }
+
+  .degree-card p{
+    font-size:14px;
+    line-height:24px;
+  }
+
+}

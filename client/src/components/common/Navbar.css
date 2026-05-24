@@ -1,11 +1,13 @@
 .navbar{
-  height:80px;
+  min-height:80px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:0 80px;
   border-bottom:1px solid #E9E5DF;
   background:#FAF8F5;
+  flex-wrap:wrap;
+  gap:1rem;
 }
 
 .navbar-logo{
@@ -43,6 +45,7 @@
   gap:40px;
   color:#4B5563;
   font-weight:500;
+  flex-wrap:wrap;
 }
 
 .navbar-links p{
@@ -57,6 +60,7 @@
 .navbar-buttons{
   display:flex;
   gap:14px;
+  flex-wrap:wrap;
 }
 
 .login-btn{
@@ -77,4 +81,36 @@
   cursor:pointer;
   font-weight:600;
   box-shadow:0 6px 18px rgba(91,141,239,0.25);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px){
+
+  .navbar{
+    padding:20px;
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .navbar-logo h2{
+    font-size:24px;
+  }
+
+  .navbar-links{
+    width:100%;
+    gap:20px;
+    justify-content:flex-start;
+  }
+
+  .navbar-buttons{
+    width:100%;
+  }
+
+  .login-btn,
+  .started-btn{
+    flex:1;
+    text-align:center;
+  }
+
 }
