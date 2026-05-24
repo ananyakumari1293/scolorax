@@ -1,0 +1,97 @@
+.degree-grid-section{
+  padding:0 80px 100px;
+  background:#FAF7F2;
+}
+
+.degree-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:28px;
+}
+
+.dashboard-degree-card{
+  background:white;
+  border-radius:32px;
+  padding:34px;
+  border:1px solid #EEE6DD;
+  transition:0.3s;
+  cursor:pointer;
+
+  position:relative;
+  overflow:hidden;
+}
+
+.dashboard-degree-card::before{
+  content:"";
+  position:absolute;
+  top:-50px;
+  right:-50px;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  background:#F7D6E6;
+  opacity:0.45;
+}
+
+.dashboard-degree-card:hover{
+  transform:translateY(-8px);
+
+  box-shadow:0 14px 32px rgba(247,214,230,0.35);
+
+  border-color:#F3D4E2;
+}
+
+.degree-card-top{
+  margin-bottom:24px;
+  position:relative;
+  z-index:2;
+}
+
+.degree-card-top span{
+  background:#FFF4CC;
+  color:#B7791F;
+  padding:8px 16px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:600;
+}
+
+.dashboard-degree-card h3{
+  font-family:'Poppins',sans-serif;
+  font-size:34px;
+  line-height:48px;
+  color:#1F2937;
+  margin-bottom:22px;
+
+  position:relative;
+  z-index:2;
+}
+
+.dashboard-degree-card p{
+  color:#6B7280;
+  line-height:30px;
+  margin-bottom:34px;
+
+  position:relative;
+  z-index:2;
+}
+
+.dashboard-degree-card button{
+  padding:16px 24px;
+  border:none;
+  border-radius:18px;
+  background:#6D8EF7;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+
+  position:relative;
+  z-index:2;
+}
+
+.dashboard-degree-card button:hover{
+  transform:translateY(-2px);
+
+  box-shadow:0 10px 24px rgba(109,142,247,0.28);
+}

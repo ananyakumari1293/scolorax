@@ -1,0 +1,47 @@
+.dashboard-hero{
+  padding:60px 80px 40px;
+  background:#FAF7F2;
+}
+
+.dashboard-hero p{
+  color:#6D8EF7;
+  font-weight:600;
+  margin-bottom:14px;
+}
+
+.dashboard-hero h1{
+  font-family:'Poppins',sans-serif;
+  font-size:56px;
+  line-height:72px;
+  color:#1F2937;
+  max-width:760px;
+  margin-bottom:40px;
+  letter-spacing:-2px;
+}
+
+.dashboard-filters{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.dashboard-filters button{
+  padding:13px 24px;
+  border-radius:999px;
+  border:none;
+  background:white;
+  cursor:pointer;
+  font-weight:500;
+  border:1px solid #ECE6DD;
+  transition:0.3s;
+}
+
+.dashboard-filters button:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 24px rgba(247,214,230,0.35);
+}
+
+.active-filter{
+  background:#6D8EF7 !important;
+  color:white;
+}
