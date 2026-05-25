@@ -36,7 +36,8 @@ function DegreePage() {
 
   const { degreeName } = useParams();
 
-  const { user } = useAuth();
+  const { currentUser } =
+    useAuth();
 
   const [showFilters, setShowFilters] =
     useState(false);
@@ -51,7 +52,7 @@ function DegreePage() {
   const handleSave =
     async (scholarship) => {
 
-      if (!user) {
+      if (!currentUser) {
 
         alert(
           "Please login first"
@@ -78,7 +79,7 @@ function DegreePage() {
               body: JSON.stringify({
 
                 userEmail:
-                  user.email,
+                  currentUser.email,
 
                 title:
                   scholarship.title,

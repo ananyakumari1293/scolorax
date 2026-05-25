@@ -28,7 +28,10 @@ function DashboardNavbar() {
 
   const navigate = useNavigate();
 
-  const { user, logout } = useAuth();
+  const {
+    currentUser,
+    logout
+  } = useAuth();
 
   const filteredDegrees =
     degreeOptions.filter((degree) =>
@@ -54,6 +57,7 @@ function DashboardNavbar() {
   };
 
   return (
+
     <nav className="dashboard-navbar">
 
       {/* LOGO */}
@@ -82,6 +86,7 @@ function DashboardNavbar() {
         />
 
         {search && (
+
           <div className="search-dropdown">
 
             {filteredDegrees.length > 0 ? (
@@ -92,14 +97,20 @@ function DashboardNavbar() {
                   className="dropdown-item"
                   key={index}
                   onClick={() => {
-                    navigate(`/degree/${degree}`);
+
+                    navigate(
+                      `/degree/${degree}`
+                    );
+
                     setSearch("");
+
                   }}
                 >
 
                   {degree}
 
                 </div>
+
               ))
 
             ) : (
@@ -111,6 +122,7 @@ function DashboardNavbar() {
             )}
 
           </div>
+
         )}
 
       </div>
@@ -120,7 +132,7 @@ function DashboardNavbar() {
 
         <div className="profile-wrapper">
 
-          {/* THREE DOTS */}
+          {/* THREE DOT MENU */}
           <div
             className="menu-trigger"
             onClick={() =>
@@ -138,22 +150,26 @@ function DashboardNavbar() {
               <div className="profile-dropdown-top">
 
                 <div className="profile-dropdown-avatar">
-                  {user?.email
+
+                  {currentUser?.email
                     ?.charAt(0)
                     .toUpperCase()}
+
                 </div>
 
                 <div>
 
                   <h4>
+
                     {
-                      user?.displayName ||
+                      currentUser?.displayName ||
                       "Student User"
                     }
+
                   </h4>
 
                   <p>
-                    {user?.email}
+                    {currentUser?.email}
                   </p>
 
                 </div>
@@ -164,8 +180,11 @@ function DashboardNavbar() {
               <div
                 className="dropdown-menu-item"
                 onClick={() => {
+
                   navigate("/profile");
+
                   setMenuOpen(false);
+
                 }}
               >
                 My Profile
@@ -175,8 +194,11 @@ function DashboardNavbar() {
               <div
                 className="dropdown-menu-item"
                 onClick={() => {
+
                   navigate("/saved");
+
                   setMenuOpen(false);
+
                 }}
               >
                 Saved Scholarships
