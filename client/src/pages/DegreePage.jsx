@@ -9,25 +9,118 @@ from "../context/AuthContext";
 
 const scholarships = [
 
+  // ================= BTECH =================
+
   {
-    title: "Tata Capital Pankh Scholarship",
+    title: "BITS Pilani Scholarship",
     type: "Private",
     location: "India",
-    amount: "₹50,000",
+    degree: "btech",
+    college: "BITS Pilani",
+    link:
+      "https://www.bits-pilani.ac.in/fee-structure-scholarships/",
   },
 
   {
-    title: "AICTE Pragati Scholarship",
+    title: "SRM Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "btech",
+    college: "SRM University",
+    link:
+      "https://www.srmist.edu.in/policies/scholarship-policy/",
+  },
+
+  {
+    title: "LPU Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "btech",
+    college: "LPU",
+    link:
+      "https://www.lpu.in/scholarship/",
+  },
+
+  {
+    title: "Thapar Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "btech",
+    college: "Thapar University",
+    link:
+      "https://www.thapar.edu/admissions/pages/scholarships",
+  },
+
+  {
+    title: "UPES Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "btech",
+    college: "UPES",
+    link:
+      "https://www.upes.ac.in/admissions/scholarships",
+  },
+
+  {
+    title: "VIT Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "btech",
+    college: "VIT Vellore",
+    link:
+      "https://viteee.vit.ac.in/",
+  },
+
+  // ================= MBA =================
+
+  {
+    title: "ISB Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "mba",
+    college: "ISB Hyderabad",
+    link:
+      "https://admitstreet.com/blog/isb-scholarships/",
+  },
+
+  {
+    title: "IIM Ahmedabad Scholarship",
     type: "Government",
     location: "India",
-    amount: "₹30,000",
+    degree: "mba",
+    college: "IIM Ahmedabad",
+    link:
+      "https://www.iquanta.in/blog/iim-ahmedabad-scholarship/",
   },
 
   {
-    title: "INSPIRE Scholarship",
+    title: "XLRI Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "mba",
+    college: "XLRI Jamshedpur",
+    link:
+      "https://bschool.careers360.com/articles/mba-scholarships-in-india-2026-amount-government-corporate-college-wise-eligibility-how-to-avail",
+  },
+
+  {
+    title: "IIM Bangalore Scholarship",
     type: "Government",
-    location: "Abroad",
-    amount: "₹80,000",
+    location: "India",
+    degree: "mba",
+    college: "IIM Bangalore",
+    link:
+      "https://gyanplug.com/blogs/mba-scholarships-india-2026-the-complete-guide-to-funding-your-dream",
+  },
+
+  {
+    title: "SPJIMR Scholarship",
+    type: "Private",
+    location: "India",
+    degree: "mba",
+    college: "SPJIMR Mumbai",
+    link:
+      "https://www.buddy4study.com/article/mba-scholarships-in-india",
   },
 
 ];
@@ -51,7 +144,8 @@ function DegreePage() {
   const [savedItems, setSavedItems] =
     useState([]);
 
-  // SAVE SCHOLARSHIP
+  // ================= SAVE =================
+
   const handleSave =
     async (scholarship) => {
 
@@ -93,8 +187,11 @@ function DegreePage() {
                 location:
                   scholarship.location,
 
-                amount:
-                  scholarship.amount,
+                college:
+                  scholarship.college,
+
+                link:
+                  scholarship.link,
 
               }),
             }
@@ -105,10 +202,18 @@ function DegreePage() {
 
         alert(data.message);
 
-        setSavedItems([
-          ...savedItems,
-          scholarship.title
-        ]);
+        if (
+          !savedItems.includes(
+            scholarship.title
+          )
+        ) {
+
+          setSavedItems([
+            ...savedItems,
+            scholarship.title
+          ]);
+
+        }
 
       } catch (error) {
 
@@ -117,9 +222,14 @@ function DegreePage() {
       }
     };
 
-  // FILTERS
+  // ================= FILTER =================
+
   const filteredScholarships =
     scholarships.filter((item) => {
+
+      const matchesDegree =
+        item.degree ===
+        degreeName.toLowerCase();
 
       const matchesType =
         selectedType === "All" ||
@@ -130,6 +240,7 @@ function DegreePage() {
         item.location === selectedLocation;
 
       return (
+        matchesDegree &&
         matchesType &&
         matchesLocation
       );
@@ -140,6 +251,7 @@ function DegreePage() {
     <div className="degree-page">
 
       {/* HEADER */}
+
       <div className="degree-page-header">
 
         <p>
@@ -152,13 +264,16 @@ function DegreePage() {
 
       </div>
 
-      {/* FILTER */}
+      {/* FILTER BAR */}
+
       <div className="modern-filter-bar">
 
         <button
           className="filter-toggle-btn"
           onClick={() =>
-            setShowFilters(!showFilters)
+            setShowFilters(
+              !showFilters
+            )
           }
         >
           Filters ⚙️
@@ -169,6 +284,7 @@ function DegreePage() {
           <div className="filter-dropdown-modern">
 
             {/* TYPE */}
+
             <h4>
               Scholarship Type
             </h4>
@@ -177,10 +293,12 @@ function DegreePage() {
 
               <div
                 className={
-                  selectedType === "Government"
-                  ? "filter-card active-card"
-                  : "filter-card"
+                  selectedType ===
+                  "Government"
+                    ? "filter-card active-card"
+                    : "filter-card"
                 }
+
                 onClick={() => {
 
                   setSelectedType(
@@ -191,6 +309,7 @@ function DegreePage() {
 
                 }}
               >
+
                 <div className="filter-icon">
                   🏛️
                 </div>
@@ -198,14 +317,17 @@ function DegreePage() {
                 <span>
                   Government
                 </span>
+
               </div>
 
               <div
                 className={
-                  selectedType === "Private"
-                  ? "filter-card active-card"
-                  : "filter-card"
+                  selectedType ===
+                  "Private"
+                    ? "filter-card active-card"
+                    : "filter-card"
                 }
+
                 onClick={() => {
 
                   setSelectedType(
@@ -216,6 +338,7 @@ function DegreePage() {
 
                 }}
               >
+
                 <div className="filter-icon">
                   🏢
                 </div>
@@ -223,11 +346,13 @@ function DegreePage() {
                 <span>
                   Private
                 </span>
+
               </div>
 
             </div>
 
             {/* LOCATION */}
+
             <h4>
               Location
             </h4>
@@ -236,10 +361,12 @@ function DegreePage() {
 
               <div
                 className={
-                  selectedLocation === "India"
-                  ? "filter-card active-card"
-                  : "filter-card"
+                  selectedLocation ===
+                  "India"
+                    ? "filter-card active-card"
+                    : "filter-card"
                 }
+
                 onClick={() => {
 
                   setSelectedLocation(
@@ -250,6 +377,7 @@ function DegreePage() {
 
                 }}
               >
+
                 <div className="filter-icon">
                   🇮🇳
                 </div>
@@ -257,14 +385,17 @@ function DegreePage() {
                 <span>
                   India
                 </span>
+
               </div>
 
               <div
                 className={
-                  selectedLocation === "Abroad"
-                  ? "filter-card active-card"
-                  : "filter-card"
+                  selectedLocation ===
+                  "Abroad"
+                    ? "filter-card active-card"
+                    : "filter-card"
                 }
+
                 onClick={() => {
 
                   setSelectedLocation(
@@ -275,6 +406,7 @@ function DegreePage() {
 
                 }}
               >
+
                 <div className="filter-icon">
                   🌍
                 </div>
@@ -282,6 +414,7 @@ function DegreePage() {
                 <span>
                   Abroad
                 </span>
+
               </div>
 
             </div>
@@ -293,69 +426,84 @@ function DegreePage() {
       </div>
 
       {/* SCHOLARSHIPS */}
+
       <div className="degree-scholarship-grid">
 
-        {filteredScholarships.map((item, index) => (
+        {filteredScholarships.map(
+          (item, index) => (
 
-          <div
-            className="degree-scholarship-card"
-            key={index}
-          >
+            <div
+              className="degree-scholarship-card"
+              key={index}
+            >
 
-            <div className="degree-card-top">
+              <div className="degree-card-top">
 
-              <span>
-                {item.type}
-              </span>
+                <span>
+                  {item.type}
+                </span>
 
-              <span
+                <span
 
-                className={
-                  savedItems.includes(item.title)
-                  ? "saved-star"
-                  : "unsaved-star"
-                }
+                  className={
+                    savedItems.includes(
+                      item.title
+                    )
+                      ? "saved-star"
+                      : "unsaved-star"
+                  }
 
-                onClick={() =>
-                  handleSave(item)
-                }
+                  onClick={() =>
+                    handleSave(item)
+                  }
+                >
+
+                  {
+                    savedItems.includes(
+                      item.title
+                    )
+                      ? "★"
+                      : "☆"
+                  }
+
+                </span>
+
+              </div>
+
+              <h3>
+                {item.title}
+              </h3>
+
+              <p>
+
+                College:
+                {" "}
+                {item.college}
+
+                <br /><br />
+
+                Location:
+                {" "}
+                {item.location}
+
+              </p>
+
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
               >
 
-                {
-                  savedItems.includes(item.title)
-                  ? "★"
-                  : "☆"
-                }
+                <button>
+                  Apply Now
+                </button>
 
-              </span>
+              </a>
 
             </div>
 
-            <h3>
-              {item.title}
-            </h3>
-
-            <p>
-
-              Scholarship amount:
-              {" "}
-              {item.amount}
-
-              <br /><br />
-
-              Location:
-              {" "}
-              {item.location}
-
-            </p>
-
-            <button>
-              Apply Now
-            </button>
-
-          </div>
-
-        ))}
+          )
+        )}
 
       </div>
 
