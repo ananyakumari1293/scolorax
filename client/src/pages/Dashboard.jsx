@@ -1,32 +1,24 @@
-import "./Dashboard.css";
-
-import DashboardNavbar
-from "../components/dashboard/DashboardNavbar";
-
-import DashboardHero
-from "../components/dashboard/DashboardHero";
-
-import DegreeGrid
-from "../components/dashboard/DegreeGrid";
-
-import AIChatbot
-from "../components/dashboard/AIChatbot";
+import DashboardNavbar from "../components/dashboard/DashboardNavbar";
+import DashboardHero from "../components/dashboard/DashboardHero";
+import DegreeGrid from "../components/dashboard/DegreeGrid";
+import AIChatbot from "../components/dashboard/AIChatbot";
 
 function Dashboard() {
 
   return (
 
-    <div className="dashboard-page">
+    <div
+      style={{
+        background:"#FAF8F5",
+        minHeight:"100vh",
+      }}
+    >
 
       <DashboardNavbar />
 
-      <div className="dashboard-content">
+      <DashboardHero />
 
-        <DashboardHero />
-
-        <DegreeGrid />
-
-      </div>
+      <DegreeGrid />
 
       <AIChatbot />
 

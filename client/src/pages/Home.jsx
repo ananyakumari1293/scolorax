@@ -1,41 +1,24 @@
-import Navbar
-from "../components/common/Navbar";
-
-import HeroSection
-from "../components/home/HeroSection";
-
-import DegreeSection
-from "../components/home/DegreeSection";
-
-import FeaturedScholarships
-from "../components/home/FeaturedScholarships";
-
-import AIChatbot
-from "../components/dashboard/AIChatbot";
-
-import "./Home.css";
+import Navbar from "../components/common/Navbar";
+import HeroSection from "../components/home/HeroSection";
+import DegreeSection from "../components/home/DegreeSection";
+import FeaturedScholarships from "../components/home/FeaturedScholarships";
 
 function Home() {
 
   return (
 
-    <div className="home-page">
+    <div>
 
       <Navbar />
 
-      <div className="home-top-layout">
+      <HeroSection />
 
-        <HeroSection />
-
-        <DegreeSection />
-
-      </div>
+      <DegreeSection />
 
       <FeaturedScholarships />
 
-      <AIChatbot />
-
     </div>
+
   );
 }
 
