@@ -1,467 +1,302 @@
-/* =========================
-   PAGE
-========================= */
-
 .degree-page{
   min-height:100vh;
   background:#FAF7F2;
-  padding:60px 70px 100px;
+  padding:48px 72px 80px;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* HEADER */
 
-.degree-page-header{
-  margin-bottom:40px;
+.degree-header{
+  margin-bottom:34px;
 }
 
-.degree-page-header p{
+.degree-header p{
   color:#6D8EF7;
   font-size:18px;
   font-weight:600;
-  margin-bottom:12px;
+  margin-bottom:10px;
 }
 
-.degree-page-header h1{
-  font-size:64px;
-  line-height:74px;
-  color:#1F2937;
-  font-weight:800;
+.degree-header h1{
+  font-size:82px;
+  line-height:92px;
+  font-weight:700;
+  color:#1D293F;
+  font-family:'Poppins',sans-serif;
 }
 
-/* =========================
-   FILTER BAR
-========================= */
+/* FILTER */
 
-.modern-filter-bar{
-  margin-bottom:40px;
-  position:relative;
+.filter-bar{
+  margin-bottom:42px;
 }
 
-.filter-toggle-btn{
-
-  padding:14px 26px;
-
-  border:none;
-
-  border-radius:18px;
+.filter-btn{
+  display:flex;
+  align-items:center;
+  gap:10px;
 
   background:white;
+  border:1px solid #F2D9E6;
 
-  border:1px solid #EDD6E3;
+  padding:18px 36px;
+
+  border-radius:26px;
+
+  font-size:20px;
+  font-weight:600;
 
   cursor:pointer;
 
-  font-weight:600;
-
-  font-size:15px;
-
-  transition:0.3s;
-
-  box-shadow:
-    0 10px 24px rgba(0,0,0,0.04);
+  transition:all 0.35s ease;
 }
 
-.filter-toggle-btn:hover{
+.filter-btn:hover{
+  background:#FFF2F8;
+  border-color:#F5BDD8;
 
   transform:translateY(-2px);
 
-  border-color:#F5B7D4;
+  box-shadow:
+    0 10px 24px rgba(245,189,216,0.22);
 }
 
-/* =========================
-   FILTER DROPDOWN
-========================= */
+/* CARDS */
 
-.filter-dropdown-modern{
+.degree-scholarship-list{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
 
-  position:absolute;
-
-  top:72px;
-
-  left:0;
-
-  width:320px;
-
+.degree-card{
   background:white;
 
-  border-radius:28px;
+  border:1px solid #F4DCE8;
 
-  padding:24px;
+  border-radius:42px;
 
-  border:1px solid #F3D4E2;
-
-  box-shadow:
-    0 20px 40px rgba(0,0,0,0.08);
-
-  z-index:100;
-}
-
-.filter-dropdown-modern h4{
-
-  margin-bottom:18px;
-
-  color:#1F2937;
-
-  font-size:17px;
-}
-
-/* =========================
-   FILTER GRID
-========================= */
-
-.filter-grid{
-
-  display:grid;
-
-  grid-template-columns:repeat(2,1fr);
-
-  gap:14px;
-
-  margin-bottom:28px;
-}
-
-.filter-card{
-
-  background:#F8F8F8;
-
-  border:1px solid #ECECEC;
-
-  border-radius:20px;
-
-  padding:18px;
-
-  cursor:pointer;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:10px;
-
-  transition:0.3s;
-
-  font-weight:600;
-
-  color:#1F2937;
-}
-
-.filter-card:hover{
-
-  transform:translateY(-3px);
-
-  background:#FFF0F7;
-
-  border-color:#F5B7D4;
-}
-
-.active-card{
-
-  background:#6D8EF7;
-
-  color:white;
-
-  border-color:#6D8EF7;
-
-  box-shadow:
-    0 12px 24px rgba(109,142,247,0.25);
-}
-
-.filter-icon{
-  font-size:24px;
-}
-
-.filter-card span{
-  font-size:14px;
-}
-
-/* =========================
-   SCHOLARSHIP GRID
-========================= */
-
-.degree-scholarship-grid{
-
-  display:flex;
-
-  flex-direction:column;
-
-  gap:28px;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.degree-scholarship-card{
-
-  width:92%;
-
-  margin:auto;
-
-  background:white;
-
-  border:1px solid #F3D4E2;
-
-  border-radius:40px;
-
-  padding:34px 40px;
-
-  transition:0.3s;
+  padding:42px 54px;
 
   position:relative;
 
   overflow:hidden;
 
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.03);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border 0.35s ease;
 }
 
-.degree-scholarship-card:hover{
+.degree-card::before{
+  content:"";
 
-  transform:translateY(-4px);
+  position:absolute;
 
-  border-color:#F5B7D4;
+  top:-80px;
+  right:-80px;
 
-  box-shadow:
-    0 18px 40px rgba(247,182,212,0.22);
-}
-
-/* =========================
-   CARD TOP
-========================= */
-
-.degree-card-top{
-
-  display:flex;
-
-  justify-content:space-between;
-
-  align-items:center;
-
-  margin-bottom:26px;
-}
-
-.degree-card-top span:first-child{
-
-  background:#FFF1CC;
-
-  color:#C68A10;
-
-  padding:10px 18px;
-
-  border-radius:999px;
-
-  font-size:14px;
-
-  font-weight:700;
-}
-
-/* =========================
-   STAR
-========================= */
-
-.saved-star,
-.unsaved-star{
-
-  width:52px;
-
-  height:52px;
+  width:220px;
+  height:220px;
 
   border-radius:50%;
 
-  background:#FFF1CC;
+  background:radial-gradient(
+    circle,
+    rgba(255,214,232,0.55),
+    transparent 70%
+  );
 
+  transition:0.4s ease;
+}
+
+.degree-card:hover{
+
+  transform:translateY(-5px);
+
+  border-color:#F3BDD5;
+
+  box-shadow:
+    0 18px 42px rgba(247,192,220,0.24);
+}
+
+.degree-card:hover::before{
+
+  transform:scale(1.1);
+}
+
+/* TOP */
+
+.degree-card-top{
   display:flex;
-
+  justify-content:space-between;
   align-items:center;
 
-  justify-content:center;
+  margin-bottom:30px;
 
-  font-size:22px;
-
-  cursor:pointer;
-
-  transition:0.3s;
+  position:relative;
+  z-index:2;
 }
 
-.saved-star:hover,
-.unsaved-star:hover{
+.degree-type{
+  background:#FFF0C9;
+  color:#C58700;
 
-  transform:scale(1.08);
-}
-
-/* =========================
-   TITLE
-========================= */
-
-.degree-scholarship-card h3{
-
-  font-size:42px;
-
-  line-height:56px;
-
-  color:#172033;
-
-  margin-bottom:24px;
-
-  font-weight:800;
-
-  max-width:850px;
-}
-
-/* =========================
-   TEXT
-========================= */
-
-.degree-scholarship-card p{
-
-  color:#4B5563;
-
-  line-height:32px;
-
-  font-size:18px;
-
-  margin-bottom:28px;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.degree-scholarship-card button{
-
-  padding:18px 38px;
-
-  border:none;
+  padding:12px 26px;
 
   border-radius:999px;
+
+  font-size:18px;
+  font-weight:600;
+}
+
+.degree-save{
+  width:74px;
+  height:74px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#FFF2F8;
+
+  color:#D18AA9;
+
+  font-size:30px;
+
+  transition:0.35s ease;
+}
+
+.degree-card:hover .degree-save{
+
+  background:#FFD9EA;
+
+  transform:rotate(8deg) scale(1.05);
+}
+
+/* TITLE */
+
+.degree-card h2{
+  font-size:68px;
+  line-height:78px;
+
+  color:#1D293F;
+
+  font-family:'Poppins',sans-serif;
+
+  margin-bottom:34px;
+
+  position:relative;
+  z-index:2;
+}
+
+/* DETAILS */
+
+.degree-info{
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+
+  margin-bottom:36px;
+
+  position:relative;
+  z-index:2;
+}
+
+.degree-info p{
+  font-size:28px;
+  color:#445069;
+}
+
+/* BUTTON */
+
+.apply-btn{
+  border:none;
 
   background:#6D8EF7;
 
   color:white;
 
-  font-size:16px;
+  padding:22px 42px;
 
-  font-weight:700;
+  border-radius:24px;
+
+  font-size:24px;
+  font-weight:600;
 
   cursor:pointer;
 
-  transition:0.3s;
+  transition:0.35s ease;
+
+  position:relative;
+  z-index:2;
 }
 
-.degree-scholarship-card button:hover{
+.apply-btn:hover{
 
-  transform:translateY(-2px);
+  transform:translateY(-3px);
+
+  background:#5C7EF2;
 
   box-shadow:
-    0 12px 28px rgba(109,142,247,0.28);
+    0 14px 30px rgba(109,142,247,0.28);
 }
 
-/* =========================
-   TABLET
-========================= */
+/* RESPONSIVE */
 
 @media (max-width:992px){
 
   .degree-page{
-    padding:50px 40px 80px;
+    padding:36px 24px 60px;
   }
 
-  .degree-page-header h1{
-
-    font-size:52px;
-
-    line-height:64px;
+  .degree-header h1{
+    font-size:58px;
+    line-height:68px;
   }
 
-  .degree-scholarship-card{
+  .degree-card{
+    padding:32px;
+  }
 
-    width:100%;
+  .degree-card h2{
+    font-size:46px;
+    line-height:58px;
+  }
+
+  .degree-info p{
+    font-size:22px;
   }
 
 }
 
-/* =========================
-   MOBILE
-========================= */
-
 @media (max-width:768px){
 
-  .degree-page{
-    padding:40px 18px 70px;
-  }
-
-  .degree-page-header{
-    margin-bottom:30px;
-  }
-
-  .degree-page-header h1{
-
-    font-size:40px;
-
+  .degree-header h1{
+    font-size:42px;
     line-height:52px;
   }
 
-  .modern-filter-bar{
-    margin-bottom:34px;
-  }
-
-  .filter-toggle-btn{
-    width:100%;
-  }
-
-  .filter-dropdown-modern{
-
-    width:100%;
-
-    left:0;
-
-    padding:20px;
-  }
-
-  .filter-grid{
-    gap:10px;
-  }
-
-  .degree-scholarship-card{
-
-    width:100%;
-
-    padding:24px;
-
+  .degree-card{
     border-radius:28px;
+    padding:24px;
   }
 
-  .degree-card-top{
-    margin-bottom:18px;
+  .degree-card h2{
+    font-size:34px;
+    line-height:44px;
   }
 
-  .degree-scholarship-card h3{
-
-    font-size:28px;
-
-    line-height:40px;
-
-    margin-bottom:18px;
+  .degree-info p{
+    font-size:18px;
   }
 
-  .degree-scholarship-card p{
-
-    font-size:15px;
-
-    line-height:26px;
-
-    margin-bottom:22px;
-  }
-
-  .degree-scholarship-card button{
-
+  .apply-btn{
     width:100%;
+    font-size:18px;
+    padding:18px;
   }
 
 }
