@@ -9,9 +9,6 @@ from "../components/dashboard/DashboardHero";
 import DegreeGrid
 from "../components/dashboard/DegreeGrid";
 
-import FeaturedScholarships
-from "../components/home/FeaturedScholarships";
-
 import AIChatbot
 from "../components/dashboard/AIChatbot";
 
@@ -19,11 +16,11 @@ function Dashboard() {
 
   return (
 
-    <>
+    <div className="dashboard-page">
 
       <DashboardNavbar />
 
-      <div className="dashboard-main-layout">
+      <div className="dashboard-content">
 
         <DashboardHero />
 
@@ -31,11 +28,9 @@ function Dashboard() {
 
       </div>
 
-      <FeaturedScholarships />
-
       <AIChatbot />
 
-    </>
+    </div>
 
   );
 }
