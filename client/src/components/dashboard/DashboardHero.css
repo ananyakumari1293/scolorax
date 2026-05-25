@@ -1,8 +1,21 @@
 .dashboard-hero{
 
-  padding:24px 40px 10px;
+  padding:20px 0;
 
-  background:#FAF7F2;
+  background:transparent;
+
+  width:100%;
+}
+
+/* CONTENT */
+
+.dashboard-hero-content{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:24px;
 }
 
 /* TOP TEXT */
@@ -13,9 +26,7 @@
 
   font-weight:600;
 
-  margin-bottom:10px;
-
-  font-size:14px;
+  font-size:16px;
 }
 
 /* HEADING */
@@ -24,100 +35,48 @@
 
   font-family:'Poppins',sans-serif;
 
-  font-size:clamp(36px, 5vw, 58px);
+  font-size:76px;
 
-  line-height:1.08;
+  line-height:88px;
 
   color:#1F2937;
 
-  max-width:680px;
+  letter-spacing:-3px;
 
-  margin-bottom:18px;
-
-  letter-spacing:-2px;
-
-  font-weight:700;
+  max-width:760px;
 }
 
 /* SUBTEXT */
 
 .dashboard-subtext{
 
-  display:block;
-
-  max-width:620px;
+  max-width:700px;
 
   color:#6B7280;
 
-  font-size:16px;
+  font-size:22px;
 
-  line-height:30px;
-
-  margin-bottom:26px;
-}
-
-/* FILTERS */
-
-.dashboard-filters{
-
-  display:flex;
-
-  gap:12px;
-
-  flex-wrap:wrap;
-}
-
-.dashboard-filters button{
-
-  padding:10px 18px;
-
-  border-radius:999px;
-
-  border:none;
-
-  background:white;
-
-  cursor:pointer;
-
-  font-weight:500;
-
-  border:1px solid #ECE6DD;
-
-  transition:0.25s;
-
-  font-size:13px;
-}
-
-.dashboard-filters button:hover{
-
-  transform:translateY(-1px);
-
-  box-shadow:0 6px 18px rgba(247,214,230,0.16);
-}
-
-.active-filter{
-
-  background:#6D8EF7 !important;
-
-  color:white;
-
-  border-color:#6D8EF7;
+  line-height:38px;
 }
 
 /* TABLET */
 
 @media (max-width:992px){
 
-  .dashboard-hero{
+  .dashboard-hero h1{
 
-    padding:22px 28px 8px;
+    font-size:58px;
+
+    line-height:70px;
+
+    max-width:100%;
   }
 
   .dashboard-subtext{
 
-    font-size:15px;
+    font-size:18px;
 
-    line-height:28px;
+    line-height:32px;
   }
 
 }
@@ -128,42 +87,33 @@
 
   .dashboard-hero{
 
-    padding:20px 18px 6px;
+    padding:10px 0;
+  }
+
+  .dashboard-hero-content{
+
+    gap:18px;
   }
 
   .dashboard-hero p{
 
-    font-size:13px;
+    font-size:14px;
   }
 
   .dashboard-hero h1{
 
-    letter-spacing:-1px;
+    font-size:42px;
 
-    margin-bottom:16px;
+    line-height:52px;
+
+    letter-spacing:-1.5px;
   }
 
   .dashboard-subtext{
 
-    font-size:14px;
+    font-size:16px;
 
-    line-height:24px;
-
-    margin-bottom:22px;
-  }
-
-  .dashboard-filters{
-
-    gap:8px;
-  }
-
-  .dashboard-filters button{
-
-    width:auto;
-
-    padding:10px 16px;
-
-    font-size:13px;
+    line-height:28px;
   }
 
 }

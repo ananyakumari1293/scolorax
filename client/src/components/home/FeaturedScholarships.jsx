@@ -1,61 +1,58 @@
 import "./FeaturedScholarships.css";
 
+import { useNavigate }
+from "react-router-dom";
+
 const scholarships = [
 
   {
     title:
-      "IIM Ahmedabad Scholarship",
-
-    degree:
-      "MBA",
-
-    deadline:
-      "Oct 12",
-
-    college:
-      "IIM Ahmedabad",
-
-    link:
-      "https://www.iquanta.in/blog/iim-ahmedabad-scholarship/",
-  },
-
-  {
-    title:
-      "ISB Scholarship",
-
-    degree:
-      "MBA",
-
-    deadline:
-      "Nov 04",
-
-    college:
-      "ISB Hyderabad",
-
-    link:
-      "https://admitstreet.com/blog/isb-scholarships/",
-  },
-
-  {
-    title:
-      "BITS Pilani Scholarship",
+      "BITS Pilani Merit Scholarship",
 
     degree:
       "B.Tech",
 
+    amount:
+      "₹80,000",
+
     deadline:
       "Sept 30",
+  },
 
-    college:
-      "BITS Pilani",
+  {
+    title:
+      "ISB MBA Excellence Scholarship",
 
-    link:
-      "https://www.bits-pilani.ac.in/fee-structure-scholarships/",
+    degree:
+      "MBA",
+
+    amount:
+      "₹1,20,000",
+
+    deadline:
+      "Oct 14",
+  },
+
+  {
+    title:
+      "IIM Ahmedabad Future Leaders Scholarship",
+
+    degree:
+      "MBA",
+
+    amount:
+      "₹95,000",
+
+    deadline:
+      "Nov 08",
   },
 
 ];
 
 function FeaturedScholarships() {
+
+  const navigate =
+    useNavigate();
 
   return (
 
@@ -68,7 +65,8 @@ function FeaturedScholarships() {
         </p>
 
         <h2>
-          Explore scholarships students are applying for right now.
+          Explore scholarships students
+          are applying for right now.
         </h2>
 
       </div>
@@ -86,11 +84,15 @@ function FeaturedScholarships() {
               <div className="featured-top">
 
                 <span className="featured-degree">
+
                   {item.degree}
+
                 </span>
 
                 <span className="featured-save">
+
                   🔒
+
                 </span>
 
               </div>
@@ -102,33 +104,45 @@ function FeaturedScholarships() {
               <div className="featured-info">
 
                 <span>
+
                   Deadline:
                   {" "}
                   {item.deadline}
+
                 </span>
 
                 <span>
-                  {item.college}
+                  {item.amount}
                 </span>
 
               </div>
 
               <div className="featured-buttons">
 
-                <a
-                  href={item.link}
-                  target="_blank"
-                  rel="noreferrer"
+                <button
+
+                  className="view-btn"
+
+                  onClick={() =>
+                    navigate("/auth")
+                  }
                 >
 
-                  <button className="view-btn">
-                    View Details
-                  </button>
+                  Unlock Access
 
-                </a>
+                </button>
 
-                <button className="save-btn">
-                  Save
+                <button
+
+                  className="save-btn"
+
+                  onClick={() =>
+                    navigate("/auth")
+                  }
+                >
+
+                  Login
+
                 </button>
 
               </div>
@@ -143,9 +157,11 @@ function FeaturedScholarships() {
       <div className="guest-note">
 
         <p>
-          Login to save scholarships,
-          personalize results,
-          and access advanced filters.
+
+          Login to unlock scholarship
+          details, save opportunities,
+          and personalize your dashboard.
+
         </p>
 
       </div>

@@ -75,3 +75,88 @@ img{
   }
 
 }
+/* =========================
+   GLOBAL SMOOTHNESS
+========================= */
+
+*{
+
+  margin:0;
+
+  padding:0;
+
+  box-sizing:border-box;
+
+  -webkit-tap-highlight-color:
+  rgba(247,214,230,0.35);
+
+  scroll-behavior:smooth;
+}
+
+/* PINK TEXT SELECTION */
+
+::selection{
+
+  background:#F7D6E6;
+
+  color:#1F2937;
+}
+
+/* SMOOTH TRANSITIONS */
+
+button,
+a,
+div{
+
+  transition:
+  all 0.28s ease;
+}
+
+/* BODY */
+
+body{
+
+  background:#FAF7F2;
+
+  overflow-x:hidden;
+
+  font-family:
+  'Inter',
+  sans-serif;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+
+  background:#FFF8FB;
+}
+
+::-webkit-scrollbar-thumb{
+
+  background:#F3CFE0;
+
+  border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+  background:#E9B7D1;
+}
+
+/* SOFT PINK GLOW ON CLICK */
+
+button:active,
+.dashboard-degree-card:active,
+.featured-card:active{
+
+  transform:scale(0.98);
+
+  box-shadow:
+  0 0 0 8px rgba(247,214,230,0.16);
+}

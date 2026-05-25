@@ -1,3 +1,5 @@
+import "./Dashboard.css";
+
 import DashboardNavbar
 from "../components/dashboard/DashboardNavbar";
 
@@ -6,31 +8,35 @@ from "../components/dashboard/DashboardHero";
 
 import DegreeGrid
 from "../components/dashboard/DegreeGrid";
-import AIChatbot from "../components/dashboard/AIChatbot";
+
+import FeaturedScholarships
+from "../components/home/FeaturedScholarships";
+
+import AIChatbot
+from "../components/dashboard/AIChatbot";
 
 function Dashboard() {
 
   return (
 
-    <div
-      style={{
-
-        background:"#FAF8F5",
-
-        minHeight:"100vh",
-
-        overflowX:"hidden",
-      }}
-    >
+    <>
 
       <DashboardNavbar />
 
-      <DashboardHero />
+      <div className="dashboard-main-layout">
 
-      <DegreeGrid />
+        <DashboardHero />
+
+        <DegreeGrid />
+
+      </div>
+
+      <FeaturedScholarships />
+
       <AIChatbot />
 
-    </div>
+    </>
+
   );
 }
 
