@@ -1,21 +1,32 @@
 import "./DashboardNavbar.css";
 
-import { useState } from "react";
+import { useState }
+from "react";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate }
+from "react-router-dom";
 
 import { useAuth }
 from "../../context/AuthContext";
 
 const degreeOptions = [
+
   "Bachelor of Technology",
+
   "Master of Technology",
+
   "MBA",
+
   "MCA",
+
   "BCA",
+
   "BBA",
+
   "BSc",
+
   "MSc",
+
 ];
 
 function DashboardNavbar() {
@@ -26,7 +37,8 @@ function DashboardNavbar() {
   const [menuOpen, setMenuOpen] =
     useState(false);
 
-  const navigate = useNavigate();
+  const navigate =
+    useNavigate();
 
   const {
     currentUser,
@@ -35,32 +47,38 @@ function DashboardNavbar() {
 
   const filteredDegrees =
     degreeOptions.filter((degree) =>
+
       degree
         .toLowerCase()
-        .includes(search.toLowerCase())
+        .includes(
+          search.toLowerCase()
+        )
     );
 
   // LOGOUT
-  const handleLogout = async () => {
 
-    try {
+  const handleLogout =
+    async () => {
 
-      await logout();
+      try {
 
-      navigate("/auth");
+        await logout();
 
-    } catch (error) {
+        navigate("/auth");
 
-      alert(error.message);
+      } catch (error) {
 
-    }
-  };
+        alert(error.message);
+
+      }
+    };
 
   return (
 
     <nav className="dashboard-navbar">
 
       {/* LOGO */}
+
       <div className="dashboard-logo">
 
         <div className="dashboard-logo-box">
@@ -68,18 +86,25 @@ function DashboardNavbar() {
         </div>
 
         <h2>
-          Scolora<span>X</span>
+
+          Scolora
+          <span>X</span>
+
         </h2>
 
       </div>
 
       {/* SEARCH */}
+
       <div className="dashboard-search">
 
         <input
           type="text"
+
           placeholder="Search degrees..."
+
           value={search}
+
           onChange={(e) =>
             setSearch(e.target.value)
           }
@@ -89,37 +114,50 @@ function DashboardNavbar() {
 
           <div className="search-dropdown">
 
-            {filteredDegrees.length > 0 ? (
+            {
 
-              filteredDegrees.map((degree, index) => (
+              filteredDegrees.length > 0
 
-                <div
-                  className="dropdown-item"
-                  key={index}
-                  onClick={() => {
+              ? (
 
-                    navigate(
-                      `/degree/${degree}`
-                    );
+                filteredDegrees.map(
+                  (degree, index) => (
 
-                    setSearch("");
+                    <div
 
-                  }}
-                >
+                      className="dropdown-item"
 
-                  {degree}
+                      key={index}
+
+                      onClick={() => {
+
+                        navigate(
+                          `/degree/${degree}`
+                        );
+
+                        setSearch("");
+
+                      }}
+                    >
+
+                      {degree}
+
+                    </div>
+
+                  )
+                )
+
+              ) : (
+
+                <div className="dropdown-item">
+
+                  No degree found
 
                 </div>
 
-              ))
+              )
 
-            ) : (
-
-              <div className="dropdown-item">
-                No degree found
-              </div>
-
-            )}
+            }
 
           </div>
 
@@ -128,32 +166,45 @@ function DashboardNavbar() {
       </div>
 
       {/* RIGHT */}
+
       <div className="dashboard-actions">
 
         <div className="profile-wrapper">
 
-          {/* THREE DOT MENU */}
-          <div
+          {/* MENU BUTTON */}
+
+          <button
+
             className="menu-trigger"
+
             onClick={() =>
               setMenuOpen(!menuOpen)
             }
           >
+
             ⋮
-          </div>
+
+          </button>
+
+          {/* DROPDOWN */}
 
           {menuOpen && (
 
             <div className="profile-dropdown">
 
-              {/* PROFILE TOP */}
+              {/* TOP */}
+
               <div className="profile-dropdown-top">
 
                 <div className="profile-dropdown-avatar">
 
-                  {currentUser?.email
-                    ?.charAt(0)
-                    .toUpperCase()}
+                  {
+
+                    currentUser?.email
+                      ?.charAt(0)
+                      .toUpperCase()
+
+                  }
 
                 </div>
 
@@ -162,8 +213,11 @@ function DashboardNavbar() {
                   <h4>
 
                     {
+
                       currentUser?.displayName ||
+
                       "Student User"
+
                     }
 
                   </h4>
@@ -176,9 +230,12 @@ function DashboardNavbar() {
 
               </div>
 
-              {/* PROFILE */}
+              {/* ITEMS */}
+
               <div
+
                 className="dropdown-menu-item"
+
                 onClick={() => {
 
                   navigate("/profile");
@@ -187,12 +244,15 @@ function DashboardNavbar() {
 
                 }}
               >
+
                 My Profile
+
               </div>
 
-              {/* SAVED */}
               <div
+
                 className="dropdown-menu-item"
+
                 onClick={() => {
 
                   navigate("/saved");
@@ -201,15 +261,20 @@ function DashboardNavbar() {
 
                 }}
               >
+
                 Saved Scholarships
+
               </div>
 
-              {/* LOGOUT */}
               <div
+
                 className="dropdown-menu-item logout-item"
+
                 onClick={handleLogout}
               >
+
                 Logout
+
               </div>
 
             </div>

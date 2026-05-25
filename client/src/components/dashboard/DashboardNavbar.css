@@ -1,210 +1,270 @@
 .dashboard-navbar{
-  min-height:90px;
-  padding:20px 80px;
+
+  min-height:82px;
+
+  padding:18px 48px;
+
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
+
   border-bottom:1px solid #EEE7DE;
+
   background:#FFFDFB;
+
   gap:24px;
-  flex-wrap:wrap;
+
+  position:sticky;
+
+  top:0;
+
+  z-index:100;
+
+  backdrop-filter:blur(12px);
 }
 
+/* LOGO */
+
 .dashboard-logo{
+
   display:flex;
+
   align-items:center;
-  gap:10px;
+
+  gap:14px;
 }
 
 .dashboard-logo-box{
-  width:42px;
-  height:42px;
+
+  width:44px;
+
+  height:44px;
+
   border-radius:14px;
+
   background:#6D8EF7;
+
   display:flex;
+
   align-items:center;
+
   justify-content:center;
+
   color:white;
+
   font-weight:700;
+
+  font-size:20px;
 }
 
 .dashboard-logo h2{
+
   font-family:'Poppins',sans-serif;
-  font-size:28px;
+
+  font-size:24px;
+
+  color:#1F2937;
 }
 
 .dashboard-logo span{
+
   color:#6D8EF7;
 }
 
+/* SEARCH */
+
 .dashboard-search{
+
   flex:1;
+
   display:flex;
+
   justify-content:center;
+
   position:relative;
+
   min-width:260px;
 }
 
 .dashboard-search input{
+
   width:100%;
+
   max-width:520px;
+
   padding:16px 22px;
+
   border-radius:20px;
+
   border:1px solid #EEE7DE;
+
   outline:none;
+
   background:#FAF7F2;
+
   font-size:15px;
+
+  transition:0.3s;
 }
 
 .dashboard-search input:focus{
-  border-color:#F3D4E2;
+
+  border-color:#6D8EF7;
+
+  background:white;
 }
+
+/* ACTIONS */
 
 .dashboard-actions{
+
   display:flex;
+
   align-items:center;
-  gap:16px;
+
+  gap:14px;
 }
 
-.dashboard-actions button{
-  width:48px;
-  height:48px;
-  border-radius:16px;
-  border:none;
-  background:#FFF3F8;
-  cursor:pointer;
-  font-size:18px;
-}
+/* MENU BUTTON */
 
-.dashboard-avatar{
-  width:48px;
-  height:48px;
-  border-radius:16px;
-  background:#FFE8A3;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  color:#1F2937;
-  cursor:pointer;
-}
+.menu-trigger{
 
-.search-dropdown{
-  position:absolute;
-  top:72px;
-  width:100%;
-  max-width:520px;
-  background:white;
-  border-radius:20px;
-  border:1px solid #EEE6DD;
-  box-shadow:0 14px 32px rgba(0,0,0,0.06);
-  overflow:hidden;
-  z-index:100;
-}
-
-.dropdown-item{
-  padding:16px 20px;
-  cursor:pointer;
-  transition:0.2s;
-  border-bottom:1px solid #F4EFE8;
-}
-
-.dropdown-item:hover{
-  background:#FFF6FA;
-}
-
-.profile-wrapper{
-  position:relative;
-}
-
-.profile-dropdown{
-  position:absolute;
-  top:62px;
-  right:0;
-  width:240px;
-  background:white;
-  border-radius:22px;
-  border:1px solid #EEE6DD;
-  box-shadow:0 18px 40px rgba(0,0,0,0.08);
-  overflow:hidden;
-  z-index:200;
-}
-
-.dropdown-menu-item{
-  padding:18px 22px;
-  cursor:pointer;
-  transition:0.2s;
-  font-weight:500;
-}
-
-.dropdown-menu-item:hover{
-  background:#FFF6FA;
-}
-
-.logout-item{
-  color:#E25555;
-}
-
-/* MOBILE RESPONSIVE */
-
-@media (max-width: 768px){
-
-  .dashboard-navbar{
-    padding:20px;
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .dashboard-logo h2{
-    font-size:24px;
-  }
-
-  .dashboard-search{
-    width:100%;
-  }
-
-  .dashboard-search input{
-    width:100%;
-    max-width:100%;
-  }
-
-  .search-dropdown{
-    width:100%;
-    max-width:100%;
-  }
-
-  .dashboard-actions{
-    width:100%;
-    justify-content:flex-end;
-  }
-
-  .profile-dropdown{
-    right:0;
-    width:220px;
-  }
-  .menu-trigger{
   width:52px;
+
   height:52px;
+
   border-radius:18px;
+
   background:white;
+
   border:1px solid #EEE6DD;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
-  font-size:28px;
+  font-size:24px;
+
   cursor:pointer;
 
   transition:0.3s;
 }
 
 .menu-trigger:hover{
+
   box-shadow:0 10px 24px rgba(0,0,0,0.06);
+
+  transform:translateY(-2px);
 }
-.profile-dropdown-top{
+
+/* AVATAR */
+
+.dashboard-avatar{
+
+  width:48px;
+
+  height:48px;
+
+  border-radius:16px;
+
+  background:#FFE8A3;
+
   display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-weight:700;
+
+  color:#1F2937;
+
+  cursor:pointer;
+}
+
+/* SEARCH DROPDOWN */
+
+.search-dropdown{
+
+  position:absolute;
+
+  top:72px;
+
+  width:100%;
+
+  max-width:520px;
+
+  background:white;
+
+  border-radius:20px;
+
+  border:1px solid #EEE6DD;
+
+  box-shadow:0 14px 32px rgba(0,0,0,0.06);
+
+  overflow:hidden;
+
+  z-index:100;
+}
+
+.dropdown-item{
+
+  padding:16px 20px;
+
+  cursor:pointer;
+
+  transition:0.2s;
+
+  border-bottom:1px solid #F4EFE8;
+}
+
+.dropdown-item:hover{
+
+  background:#FFF6FA;
+}
+
+/* PROFILE */
+
+.profile-wrapper{
+
+  position:relative;
+}
+
+.profile-dropdown{
+
+  position:absolute;
+
+  top:70px;
+
+  right:0;
+
+  width:280px;
+
+  background:white;
+
+  border-radius:24px;
+
+  border:1px solid #EEE6DD;
+
+  box-shadow:0 18px 40px rgba(0,0,0,0.08);
+
+  overflow:hidden;
+
+  z-index:200;
+}
+
+/* PROFILE TOP */
+
+.profile-dropdown-top{
+
+  display:flex;
+
   gap:14px;
+
   align-items:center;
 
   padding:20px;
@@ -213,7 +273,9 @@
 }
 
 .profile-dropdown-avatar{
+
   width:52px;
+
   height:52px;
 
   border-radius:50%;
@@ -221,40 +283,112 @@
   background:#FFE8A3;
 
   display:flex;
+
   align-items:center;
+
   justify-content:center;
 
   font-weight:700;
+
   font-size:20px;
 }
 
 .profile-dropdown-top h4{
+
   font-size:16px;
+
   margin-bottom:4px;
+
+  color:#1F2937;
 }
 
 .profile-dropdown-top p{
+
   font-size:13px;
+
   color:#6B7280;
 
   word-break:break-word;
-}
-.profile-dropdown{
-  right:0;
-  left:auto;
+
+  line-height:1.4;
 }
 
+/* MENU ITEMS */
+
+.dropdown-menu-item{
+
+  padding:18px 22px;
+
+  cursor:pointer;
+
+  transition:0.2s;
+
+  font-weight:500;
+
+  color:#1F2937;
+}
+
+.dropdown-menu-item:hover{
+
+  background:#FFF6FA;
+}
+
+.logout-item{
+
+  color:#E25555;
+}
+
+/* MOBILE */
+
 @media (max-width:768px){
+
+  .dashboard-navbar{
+
+    padding:16px 20px;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+  }
+
+  .dashboard-logo h2{
+
+    font-size:22px;
+  }
+
+  .dashboard-search{
+
+    width:100%;
+
+    order:3;
+  }
+
+  .dashboard-search input{
+
+    width:100%;
+
+    max-width:100%;
+  }
+
+  .search-dropdown{
+
+    width:100%;
+
+    max-width:100%;
+  }
+
+  .dashboard-actions{
+
+    margin-left:auto;
+  }
 
   .profile-dropdown{
 
     width:260px;
 
-    right:-10px;
+    right:-8px;
 
-    top:58px;
+    top:64px;
   }
-
-}
 
 }
