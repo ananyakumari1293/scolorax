@@ -1,212 +1,184 @@
+.degree-grid-section{
+
+  padding:0 48px 80px;
+
+  background:#FAF7F2;
+}
+
 .degree-grid{
-
-  width:100%;
-  max-width:1350px;
-
-  margin:0 auto;
-
-  padding:10px 40px 70px;
 
   display:grid;
 
-  grid-template-columns:
-    repeat(auto-fit,minmax(320px,1fr));
+  grid-template-columns:repeat(2,1fr);
 
-  gap:26px;
+  gap:24px;
 }
 
 /* CARD */
 
-.degree-card{
+.dashboard-degree-card{
 
   background:white;
 
-  border:1px solid #F5DCE8;
+  border-radius:28px;
 
-  border-radius:30px;
+  padding:26px;
 
-  padding:28px;
+  border:1px solid #EEE6DD;
+
+  transition:0.3s;
+
+  cursor:pointer;
 
   position:relative;
 
   overflow:hidden;
 
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border 0.35s ease;
-
-  cursor:pointer;
+  min-height:300px;
 }
 
-/* SHINY PINK LIGHT */
-
-.degree-card::before{
+.dashboard-degree-card::before{
 
   content:"";
 
   position:absolute;
 
-  top:-80px;
-  right:-80px;
+  top:-40px;
 
-  width:220px;
-  height:220px;
+  right:-40px;
+
+  width:120px;
+
+  height:120px;
 
   border-radius:50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(255,214,232,0.45),
-      transparent 70%
-    );
+  background:#F7D6E6;
 
-  transition:0.4s ease;
+  opacity:0.4;
 }
 
-.degree-card:hover{
+.dashboard-degree-card:hover{
 
-  transform:translateY(-6px);
+  transform:translateY(-5px);
 
-  border-color:#F3BED5;
+  box-shadow:0 14px 32px rgba(247,214,230,0.22);
 
-  box-shadow:
-    0 16px 34px rgba(245,189,216,0.20);
-}
-
-.degree-card:hover::before{
-
-  transform:scale(1.08);
+  border-color:#F3D4E2;
 }
 
 /* TOP */
 
 .degree-card-top{
 
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  margin-bottom:22px;
+  margin-bottom:20px;
 
   position:relative;
+
   z-index:2;
 }
 
-/* TAG */
+.degree-card-top span{
 
-.degree-tag{
+  background:#FFF4CC;
 
-  background:#FFF0C9;
-  color:#C88A00;
+  color:#B7791F;
 
-  padding:9px 16px;
+  padding:7px 14px;
 
   border-radius:999px;
 
-  font-size:13px;
+  font-size:12px;
+
   font-weight:600;
-}
-
-/* ICON */
-
-.degree-icon{
-
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  background:#FFF2F8;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  font-size:22px;
 }
 
 /* TITLE */
 
-.degree-card h2{
-
-  font-size:24px;
-
-  line-height:34px;
-
-  color:#1F2937;
-
-  margin-bottom:14px;
+.dashboard-degree-card h3{
 
   font-family:'Poppins',sans-serif;
 
-  font-weight:700;
+  font-size:26px;
+
+  line-height:38px;
+
+  color:#1F2937;
+
+  margin-bottom:18px;
 
   position:relative;
+
   z-index:2;
+
+  max-width:480px;
 }
 
-/* TEXT */
+/* DESCRIPTION */
 
-.degree-card p{
+.dashboard-degree-card p{
 
-  font-size:16px;
+  color:#6B7280;
 
   line-height:28px;
 
-  color:#667085;
-
-  margin-bottom:24px;
+  margin-bottom:28px;
 
   position:relative;
+
   z-index:2;
+
+  font-size:16px;
+
+  max-width:520px;
 }
 
 /* BUTTON */
 
-.degree-card button{
+.dashboard-degree-card button{
+
+  padding:14px 22px;
 
   border:none;
+
+  border-radius:16px;
 
   background:#6D8EF7;
 
   color:white;
 
-  padding:14px 22px;
-
-  border-radius:16px;
-
-  font-size:15px;
   font-weight:600;
 
   cursor:pointer;
 
-  transition:0.3s ease;
+  transition:0.3s;
 
   position:relative;
+
   z-index:2;
+
+  font-size:15px;
 }
 
-.degree-card button:hover{
-
-  background:#5B7EF2;
+.dashboard-degree-card button:hover{
 
   transform:translateY(-2px);
 
-  box-shadow:
-    0 12px 24px rgba(109,142,247,0.24);
+  box-shadow:0 10px 24px rgba(109,142,247,0.22);
 }
 
 /* TABLET */
 
 @media (max-width:992px){
 
+  .degree-grid-section{
+
+    padding:0 32px 70px;
+  }
+
   .degree-grid{
 
-    padding:10px 26px 60px;
-
-    gap:22px;
+    grid-template-columns:1fr;
   }
 
 }
@@ -215,39 +187,52 @@
 
 @media (max-width:768px){
 
+  .degree-grid-section{
+
+    padding:0 20px 50px;
+  }
+
   .degree-grid{
 
     grid-template-columns:1fr;
 
-    padding:10px 16px 50px;
-
     gap:18px;
   }
 
-  .degree-card{
+  .dashboard-degree-card{
 
     padding:22px;
 
-    border-radius:24px;
+    border-radius:22px;
+
+    min-height:auto;
   }
 
-  .degree-card h2{
+  .dashboard-degree-card h3{
 
-    font-size:22px;
+    font-size:24px;
 
-    line-height:32px;
+    line-height:34px;
+
+    margin-bottom:14px;
   }
 
-  .degree-card p{
-
-    font-size:15px;
+  .dashboard-degree-card p{
 
     line-height:25px;
+
+    font-size:14px;
+
+    margin-bottom:22px;
   }
 
-  .degree-card button{
+  .dashboard-degree-card button{
 
     width:100%;
+
+    padding:14px 18px;
+
+    border-radius:14px;
   }
 
 }
