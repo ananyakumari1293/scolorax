@@ -334,5 +334,29 @@
 .filter-card span{
   font-size:14px;
 }
+.saved-star{
+  color:#FFD43B;
+
+  font-size:28px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.unsaved-star{
+  color:#B8B8B8;
+
+  font-size:28px;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.saved-star:hover,
+.unsaved-star:hover{
+  transform:scale(1.1);
+}
 
 }

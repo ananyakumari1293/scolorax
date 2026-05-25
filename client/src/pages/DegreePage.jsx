@@ -48,6 +48,9 @@ function DegreePage() {
   const [selectedLocation, setSelectedLocation] =
     useState("All");
 
+  const [savedItems, setSavedItems] =
+    useState([]);
+
   // SAVE SCHOLARSHIP
   const handleSave =
     async (scholarship) => {
@@ -102,6 +105,11 @@ function DegreePage() {
 
         alert(data.message);
 
+        setSavedItems([
+          ...savedItems,
+          scholarship.title
+        ]);
+
       } catch (error) {
 
         console.log(error);
@@ -144,7 +152,7 @@ function DegreePage() {
 
       </div>
 
-      {/* MODERN FILTER */}
+      {/* FILTER */}
       <div className="modern-filter-bar">
 
         <button
@@ -301,11 +309,24 @@ function DegreePage() {
               </span>
 
               <span
+
+                className={
+                  savedItems.includes(item.title)
+                  ? "saved-star"
+                  : "unsaved-star"
+                }
+
                 onClick={() =>
                   handleSave(item)
                 }
               >
-                ☆
+
+                {
+                  savedItems.includes(item.title)
+                  ? "★"
+                  : "☆"
+                }
+
               </span>
 
             </div>
