@@ -239,5 +239,22 @@
 
   word-break:break-word;
 }
+.profile-dropdown{
+  right:0;
+  left:auto;
+}
+
+@media (max-width:768px){
+
+  .profile-dropdown{
+
+    width:260px;
+
+    right:-10px;
+
+    top:58px;
+  }
+
+}
 
 }
