@@ -1,31 +1,133 @@
 import "./DegreePage.css";
+
+import { useState } from "react";
+
 import { useParams } from "react-router-dom";
 
+import { useAuth }
+from "../context/AuthContext";
+
 const scholarships = [
+
   {
     title: "Tata Capital Pankh Scholarship",
     type: "Private",
+    location: "India",
     amount: "₹50,000",
   },
 
   {
     title: "AICTE Pragati Scholarship",
     type: "Government",
+    location: "India",
     amount: "₹30,000",
   },
 
   {
     title: "INSPIRE Scholarship",
     type: "Government",
+    location: "Abroad",
     amount: "₹80,000",
   },
+
 ];
 
 function DegreePage() {
 
   const { degreeName } = useParams();
 
+  const { user } = useAuth();
+
+  const [showFilters, setShowFilters] =
+    useState(false);
+
+  const [selectedType, setSelectedType] =
+    useState("All");
+
+  const [selectedLocation, setSelectedLocation] =
+    useState("All");
+
+  // SAVE SCHOLARSHIP
+  const handleSave =
+    async (scholarship) => {
+
+      if (!user) {
+
+        alert(
+          "Please login first"
+        );
+
+        return;
+      }
+
+      try {
+
+        const response =
+          await fetch(
+
+            `${import.meta.env.VITE_API_URL}/api/saved/save`,
+
+            {
+              method: "POST",
+
+              headers: {
+                "Content-Type":
+                  "application/json",
+              },
+
+              body: JSON.stringify({
+
+                userEmail:
+                  user.email,
+
+                title:
+                  scholarship.title,
+
+                type:
+                  scholarship.type,
+
+                location:
+                  scholarship.location,
+
+                amount:
+                  scholarship.amount,
+
+              }),
+            }
+          );
+
+        const data =
+          await response.json();
+
+        alert(data.message);
+
+      } catch (error) {
+
+        console.log(error);
+
+      }
+    };
+
+  // FILTERS
+  const filteredScholarships =
+    scholarships.filter((item) => {
+
+      const matchesType =
+        selectedType === "All" ||
+        item.type === selectedType;
+
+      const matchesLocation =
+        selectedLocation === "All" ||
+        item.location === selectedLocation;
+
+      return (
+        matchesType &&
+        matchesLocation
+      );
+    });
+
   return (
+
     <div className="degree-page">
 
       {/* HEADER */}
@@ -41,27 +143,99 @@ function DegreePage() {
 
       </div>
 
-      {/* FILTERS */}
-      <div className="degree-filters">
+      {/* MODERN FILTER */}
+      <div className="modern-filter-bar">
 
-        <button className="active-filter">
-          All
+        <button
+          className="filter-toggle-btn"
+          onClick={() =>
+            setShowFilters(!showFilters)
+          }
+        >
+          Filters ⚙️
         </button>
 
-        <button>
-          Government
-        </button>
+        {showFilters && (
 
-        <button>
-          Private
-        </button>
+          <div className="filter-dropdown-modern">
+
+            {/* TYPE */}
+            <h4>
+              Scholarship Type
+            </h4>
+
+            <div className="filter-options">
+
+              <button
+                onClick={() =>
+                  setSelectedType("All")
+                }
+              >
+                All
+              </button>
+
+              <button
+                onClick={() =>
+                  setSelectedType("Government")
+                }
+              >
+                Government
+              </button>
+
+              <button
+                onClick={() =>
+                  setSelectedType("Private")
+                }
+              >
+                Private
+              </button>
+
+            </div>
+
+            {/* LOCATION */}
+            <h4>
+              Location
+            </h4>
+
+            <div className="filter-options">
+
+              <button
+                onClick={() =>
+                  setSelectedLocation("All")
+                }
+              >
+                All
+              </button>
+
+              <button
+                onClick={() =>
+                  setSelectedLocation("India")
+                }
+              >
+                India
+              </button>
+
+              <button
+                onClick={() =>
+                  setSelectedLocation("Abroad")
+                }
+              >
+                Abroad
+              </button>
+
+            </div>
+
+          </div>
+
+        )}
 
       </div>
 
       {/* SCHOLARSHIPS */}
       <div className="degree-scholarship-grid">
 
-        {scholarships.map((item, index) => (
+        {filteredScholarships.map((item, index) => (
+
           <div
             className="degree-scholarship-card"
             key={index}
@@ -73,7 +247,11 @@ function DegreePage() {
                 {item.type}
               </span>
 
-              <span>
+              <span
+                onClick={() =>
+                  handleSave(item)
+                }
+              >
                 ☆
               </span>
 
@@ -84,9 +262,17 @@ function DegreePage() {
             </h3>
 
             <p>
+
               Scholarship amount:
               {" "}
               {item.amount}
+
+              <br /><br />
+
+              Location:
+              {" "}
+              {item.location}
+
             </p>
 
             <button>
@@ -94,6 +280,7 @@ function DegreePage() {
             </button>
 
           </div>
+
         ))}
 
       </div>

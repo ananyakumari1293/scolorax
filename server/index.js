@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import scholarshipRoutes
 from "./routes/scholarshipRoutes.js";
+import savedRoutes from "./routes/savedRoutes.js";
 
 dotenv.config();
 
@@ -15,7 +16,10 @@ app.use(
   "/api/scholarships",
   scholarshipRoutes
 );
-
+app.use(
+  "/api/saved",
+  savedRoutes
+);
 app.get("/", (req, res) => {
   res.send("ScoloraX Backend Running");
 });

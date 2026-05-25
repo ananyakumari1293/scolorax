@@ -18,33 +18,93 @@
   font-family:'Poppins',sans-serif;
   font-size:56px;
   color:#1F2937;
+  line-height:72px;
 }
 
-.degree-filters{
-  display:flex;
-  gap:16px;
+/* MODERN FILTER */
+
+.modern-filter-bar{
   margin-bottom:50px;
-  flex-wrap:wrap;
+  position:relative;
 }
 
-.degree-filters button{
-  padding:12px 22px;
-  border-radius:999px;
+.filter-toggle-btn{
+  padding:14px 24px;
+
   border:none;
+
+  border-radius:18px;
+
   background:white;
-  border:1px solid #ECE6DD;
+
+  border:1px solid #EEE6DD;
+
   cursor:pointer;
+
+  font-weight:600;
+
   transition:0.3s;
+
+  box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
-.degree-filters button:hover{
+.filter-toggle-btn:hover{
   transform:translateY(-2px);
 }
 
-.active-filter{
-  background:#6D8EF7 !important;
-  color:white;
+.filter-dropdown-modern{
+  position:absolute;
+
+  top:70px;
+  left:0;
+
+  width:320px;
+
+  background:white;
+
+  border-radius:24px;
+
+  padding:24px;
+
+  border:1px solid #EEE6DD;
+
+  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+  z-index:100;
 }
+
+.filter-dropdown-modern h4{
+  margin-bottom:16px;
+  color:#1F2937;
+}
+
+.filter-options{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+
+  margin-bottom:24px;
+}
+
+.filter-options button{
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  border:none;
+
+  background:#F7F7F7;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.filter-options button:hover{
+  background:#E9EEFF;
+}
+
+/* GRID */
 
 .degree-scholarship-grid{
   display:grid;
@@ -82,7 +142,10 @@
 .degree-card-top{
   display:flex;
   justify-content:space-between;
+  align-items:center;
+
   margin-bottom:24px;
+
   position:relative;
   z-index:2;
 }
@@ -94,6 +157,11 @@
   border-radius:999px;
   font-size:13px;
   font-weight:600;
+}
+
+.degree-card-top span:last-child{
+  font-size:24px;
+  cursor:pointer;
 }
 
 .degree-scholarship-card h3{
@@ -122,8 +190,14 @@
   color:white;
   font-weight:600;
   cursor:pointer;
+  transition:0.3s;
   position:relative;
   z-index:2;
+}
+
+.degree-scholarship-card button:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 24px rgba(109,142,247,0.28);
 }
 
 /* TABLET */
@@ -157,15 +231,26 @@
     line-height:46px;
   }
 
-  .degree-filters{
-    gap:12px;
+  .modern-filter-bar{
     margin-bottom:36px;
   }
 
-  .degree-filters button{
+  .filter-toggle-btn{
     width:100%;
-    text-align:center;
-    padding:12px 18px;
+  }
+
+  .filter-dropdown-modern{
+    width:100%;
+    left:0;
+    padding:20px;
+  }
+
+  .filter-options{
+    gap:10px;
+  }
+
+  .filter-options button{
+    flex:1;
   }
 
   .degree-scholarship-grid{

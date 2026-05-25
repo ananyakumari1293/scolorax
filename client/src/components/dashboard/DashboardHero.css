@@ -18,6 +18,17 @@
   margin-bottom:40px;
   letter-spacing:-2px;
 }
+.dashboard-subtext{
+  display:block;
+
+  max-width:620px;
+
+  font-size:18px;
+
+  line-height:34px;
+
+  color:#6B7280;
+}
 
 .dashboard-filters{
   display:flex;

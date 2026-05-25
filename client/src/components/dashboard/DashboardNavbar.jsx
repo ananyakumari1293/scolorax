@@ -28,7 +28,7 @@ function DashboardNavbar() {
 
   const navigate = useNavigate();
 
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const filteredDegrees =
     degreeOptions.filter((degree) =>
@@ -120,18 +120,45 @@ function DashboardNavbar() {
 
         <div className="profile-wrapper">
 
+          {/* THREE DOTS */}
           <div
-            className="dashboard-avatar"
+            className="menu-trigger"
             onClick={() =>
               setMenuOpen(!menuOpen)
             }
           >
-            AP
+            ⋮
           </div>
 
           {menuOpen && (
 
             <div className="profile-dropdown">
+
+              {/* PROFILE TOP */}
+              <div className="profile-dropdown-top">
+
+                <div className="profile-dropdown-avatar">
+                  {user?.email
+                    ?.charAt(0)
+                    .toUpperCase()}
+                </div>
+
+                <div>
+
+                  <h4>
+                    {
+                      user?.displayName ||
+                      "Student User"
+                    }
+                  </h4>
+
+                  <p>
+                    {user?.email}
+                  </p>
+
+                </div>
+
+              </div>
 
               {/* PROFILE */}
               <div

@@ -28,6 +28,7 @@ const savedScholarshipSchema =
   });
 
 const SavedScholarship =
+  mongoose.models.SavedScholarship ||
   mongoose.model(
     "SavedScholarship",
     savedScholarshipSchema

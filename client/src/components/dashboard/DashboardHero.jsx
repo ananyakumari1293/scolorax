@@ -1,10 +1,11 @@
 import "./DashboardHero.css";
 
 function DashboardHero() {
+
   return (
     <section className="dashboard-hero">
 
-      <div>
+      <div className="dashboard-hero-content">
 
         <p>
           Welcome back 👋
@@ -14,29 +15,10 @@ function DashboardHero() {
           Explore scholarships curated for students.
         </h1>
 
-      </div>
-
-      <div className="dashboard-filters">
-
-        <button className="active-filter">
-          All
-        </button>
-
-        <button>
-          Government
-        </button>
-
-        <button>
-          Private
-        </button>
-
-        <button>
-          Engineering
-        </button>
-
-        <button>
-          Recently Added
-        </button>
+        <span className="dashboard-subtext">
+          Discover opportunities across universities,
+          degrees, and countries — all in one place.
+        </span>
 
       </div>
 
