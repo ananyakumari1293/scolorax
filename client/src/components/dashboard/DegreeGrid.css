@@ -1,13 +1,18 @@
 .degree-grid{
+
   width:100%;
-  padding:20px 60px 80px;
+  max-width:1350px;
+
+  margin:0 auto;
+
+  padding:10px 40px 70px;
 
   display:grid;
 
   grid-template-columns:
     repeat(auto-fit,minmax(320px,1fr));
 
-  gap:28px;
+  gap:26px;
 }
 
 /* CARD */
@@ -18,9 +23,9 @@
 
   border:1px solid #F5DCE8;
 
-  border-radius:32px;
+  border-radius:30px;
 
-  padding:30px;
+  padding:28px;
 
   position:relative;
 
@@ -67,7 +72,7 @@
   border-color:#F3BED5;
 
   box-shadow:
-    0 16px 34px rgba(245,189,216,0.22);
+    0 16px 34px rgba(245,189,216,0.20);
 }
 
 .degree-card:hover::before{
@@ -96,11 +101,11 @@
   background:#FFF0C9;
   color:#C88A00;
 
-  padding:10px 18px;
+  padding:9px 16px;
 
   border-radius:999px;
 
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
 }
 
@@ -108,8 +113,8 @@
 
 .degree-icon{
 
-  width:54px;
-  height:54px;
+  width:52px;
+  height:52px;
 
   border-radius:50%;
 
@@ -119,21 +124,24 @@
   align-items:center;
   justify-content:center;
 
-  font-size:24px;
+  font-size:22px;
 }
 
 /* TITLE */
 
 .degree-card h2{
 
-  font-size:28px;
-  line-height:40px;
+  font-size:24px;
+
+  line-height:34px;
 
   color:#1F2937;
 
-  margin-bottom:16px;
+  margin-bottom:14px;
 
   font-family:'Poppins',sans-serif;
+
+  font-weight:700;
 
   position:relative;
   z-index:2;
@@ -143,12 +151,13 @@
 
 .degree-card p{
 
-  font-size:18px;
-  line-height:30px;
+  font-size:16px;
+
+  line-height:28px;
 
   color:#667085;
 
-  margin-bottom:28px;
+  margin-bottom:24px;
 
   position:relative;
   z-index:2;
@@ -164,11 +173,11 @@
 
   color:white;
 
-  padding:16px 24px;
+  padding:14px 22px;
 
-  border-radius:18px;
+  border-radius:16px;
 
-  font-size:16px;
+  font-size:15px;
   font-weight:600;
 
   cursor:pointer;
@@ -186,7 +195,7 @@
   transform:translateY(-2px);
 
   box-shadow:
-    0 12px 24px rgba(109,142,247,0.25);
+    0 12px 24px rgba(109,142,247,0.24);
 }
 
 /* TABLET */
@@ -194,7 +203,9 @@
 @media (max-width:992px){
 
   .degree-grid{
-    padding:20px 30px 60px;
+
+    padding:10px 26px 60px;
+
     gap:22px;
   }
 
@@ -208,7 +219,7 @@
 
     grid-template-columns:1fr;
 
-    padding:18px 18px 50px;
+    padding:10px 16px 50px;
 
     gap:18px;
   }
@@ -222,14 +233,16 @@
 
   .degree-card h2{
 
-    font-size:24px;
-    line-height:34px;
+    font-size:22px;
+
+    line-height:32px;
   }
 
   .degree-card p{
 
     font-size:15px;
-    line-height:26px;
+
+    line-height:25px;
   }
 
   .degree-card button{
