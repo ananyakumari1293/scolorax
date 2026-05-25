@@ -4,8 +4,7 @@ import { useState } from "react";
 
 import { useParams } from "react-router-dom";
 
-import { useAuth }
-from "../context/AuthContext";
+import { useAuth } from "../context/AuthContext";
 
 const scholarships = [
 
@@ -142,7 +141,19 @@ function DegreePage() {
     useState("All");
 
   const [savedItems, setSavedItems] =
-    useState([]);
+  useState(
+
+    JSON.parse(
+
+      localStorage.getItem(
+        "savedScholarships"
+      )
+
+    )?.map(
+      (item) => item.title
+    ) || []
+
+  );
 
   // ================= SAVE =================
 
@@ -159,6 +170,8 @@ function DegreePage() {
       }
 
       try {
+
+        /* BACKEND SAVE */
 
         const response =
           await fetch(
@@ -202,15 +215,79 @@ function DegreePage() {
 
         alert(data.message);
 
+        /* =========================
+           LOCAL STORAGE SAVE
+        ========================== */
+
+        const existingSaved =
+          JSON.parse(
+
+            localStorage.getItem(
+              "savedScholarships"
+            )
+
+          ) || [];
+
+        const alreadyExists =
+          existingSaved.find(
+
+            (item) =>
+
+              item.title ===
+              scholarship.title
+
+          );
+
+        if(!alreadyExists){
+
+          const updatedSaved = [
+
+            ...existingSaved,
+
+            {
+              title:
+                scholarship.title,
+
+              description:
+                `${scholarship.college} scholarship opportunity.`,
+
+              type:
+                scholarship.type,
+
+              link:
+                scholarship.link,
+            }
+
+          ];
+
+          localStorage.setItem(
+
+            "savedScholarships",
+
+            JSON.stringify(
+              updatedSaved
+            )
+          );
+        }
+
+        /* =========================
+           STAR UI UPDATE
+        ========================== */
+
         if (
+
           !savedItems.includes(
             scholarship.title
           )
+
         ) {
 
           setSavedItems([
+
             ...savedItems,
+
             scholarship.title
+
           ]);
 
         }
@@ -255,7 +332,7 @@ function DegreePage() {
 
     <div className="degree-page">
 
-      {/* ================= HEADER ================= */}
+      {/* HEADER */}
 
       <div className="degree-page-header">
 
@@ -269,7 +346,7 @@ function DegreePage() {
 
       </div>
 
-      {/* ================= FILTER ================= */}
+      {/* FILTER */}
 
       <div className="modern-filter-bar">
 
@@ -451,7 +528,7 @@ function DegreePage() {
 
       </div>
 
-      {/* ================= SCHOLARSHIPS ================= */}
+      {/* SCHOLARSHIPS */}
 
       <div className="degree-scholarship-grid">
 
