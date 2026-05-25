@@ -1,232 +1,368 @@
 .degree-page{
+
   min-height:100vh;
+
   background:#FAF7F2;
-  padding:60px 80px 100px;
+
+  padding:32px 40px 60px;
 }
 
 /* HEADER */
 
 .degree-page-header{
-  margin-bottom:40px;
+
+  margin-bottom:28px;
 }
 
 .degree-page-header p{
+
   color:#6D8EF7;
+
   font-weight:600;
-  margin-bottom:12px;
+
+  margin-bottom:8px;
+
+  font-size:14px;
 }
 
 .degree-page-header h1{
+
   font-family:'Poppins',sans-serif;
-  font-size:56px;
+
+  font-size:clamp(34px,5vw,54px);
+
   color:#1F2937;
-  line-height:72px;
+
+  line-height:1.1;
+
+  letter-spacing:-2px;
 }
 
 /* FILTER */
 
 .modern-filter-bar{
-  margin-bottom:50px;
+
+  margin-bottom:30px;
+
   position:relative;
 }
 
 .filter-toggle-btn{
-  padding:14px 24px;
+
+  padding:12px 20px;
+
   border:none;
-  border-radius:18px;
+
+  border-radius:14px;
+
   background:white;
+
   border:1px solid #EEE6DD;
+
   cursor:pointer;
+
   font-weight:600;
-  transition:0.3s;
-  box-shadow:0 8px 20px rgba(0,0,0,0.04);
+
+  transition:0.25s;
+
+  box-shadow:0 4px 12px rgba(0,0,0,0.03);
+
+  font-size:14px;
 }
 
 .filter-toggle-btn:hover{
-  transform:translateY(-2px);
+
+  transform:translateY(-1px);
 }
 
 /* DROPDOWN */
 
 .filter-dropdown-modern{
+
   position:absolute;
-  top:70px;
+
+  top:60px;
+
   left:0;
-  width:320px;
+
+  width:300px;
+
   background:white;
-  border-radius:24px;
-  padding:24px;
+
+  border-radius:18px;
+
+  padding:20px;
+
   border:1px solid #EEE6DD;
-  box-shadow:0 20px 40px rgba(0,0,0,0.08);
+
+  box-shadow:0 14px 30px rgba(0,0,0,0.06);
+
   z-index:100;
 }
 
 .filter-dropdown-modern h4{
-  margin-bottom:16px;
+
+  margin-bottom:14px;
+
   color:#1F2937;
+
+  font-size:15px;
 }
 
 /* FILTER GRID */
 
 .filter-grid{
+
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-bottom:28px;
+
+  gap:10px;
+
+  margin-bottom:20px;
 }
 
 .filter-card{
+
   background:#F8F8F8;
+
   border:1px solid #ECECEC;
-  border-radius:20px;
-  padding:20px;
+
+  border-radius:14px;
+
+  padding:14px;
+
   cursor:pointer;
+
   display:flex;
+
   flex-direction:column;
+
   align-items:center;
+
   justify-content:center;
-  gap:10px;
-  transition:0.3s;
+
+  gap:8px;
+
+  transition:0.25s;
+
   font-weight:600;
+
   color:#1F2937;
 }
 
 .filter-card:hover{
-  transform:translateY(-3px);
+
   background:#EEF4FF;
 }
 
 .active-card{
+
   background:#6D8EF7;
+
   color:white;
+
   border-color:#6D8EF7;
-  box-shadow:0 12px 24px rgba(109,142,247,0.25);
 }
 
 .filter-card span{
-  font-size:14px;
+
+  font-size:13px;
 }
 
 .filter-icon{
-  font-size:24px;
+
+  font-size:20px;
 }
 
 /* GRID */
 
 .degree-scholarship-grid{
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:28px;
+
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+  gap:18px;
 }
 
 /* CARD */
 
 .degree-scholarship-card{
+
   background:white;
-  border-radius:30px;
-  padding:26px;
+
+  border-radius:20px;
+
+  padding:20px;
+
   border:1px solid #EEE6DD;
-  transition:0.3s;
+
+  transition:0.25s;
+
   position:relative;
+
   overflow:hidden;
+
+  min-height:220px;
 }
 
 .degree-scholarship-card::before{
+
   content:"";
+
   position:absolute;
-  top:-40px;
-  right:-40px;
-  width:120px;
-  height:120px;
+
+  top:-30px;
+
+  right:-30px;
+
+  width:90px;
+
+  height:90px;
+
   border-radius:50%;
+
   background:#F7D6E6;
-  opacity:0.4;
+
+  opacity:0.28;
 }
 
 .degree-scholarship-card:hover{
-  transform:translateY(-8px);
-  box-shadow:0 14px 32px rgba(247,214,230,0.35);
+
+  transform:translateY(-3px);
+
+  box-shadow:0 8px 20px rgba(247,214,230,0.18);
 }
 
 /* TOP */
 
 .degree-card-top{
+
   display:flex;
+
   justify-content:space-between;
+
   align-items:center;
-  margin-bottom:24px;
+
+  margin-bottom:16px;
+
   position:relative;
+
   z-index:2;
 }
 
 .degree-card-top span:first-child{
+
   background:#FFF4CC;
+
   color:#B7791F;
-  padding:7px 14px;
+
+  padding:6px 12px;
+
   border-radius:999px;
-  font-size:13px;
+
+  font-size:11px;
+
   font-weight:600;
 }
 
 /* STAR */
 
-.saved-star{
-  color:#FFD43B;
-  font-size:28px;
+.saved-star,
+.unsaved-star{
+
+  font-size:22px;
+
   cursor:pointer;
-  transition:0.3s;
+
+  transition:0.25s;
+}
+
+.saved-star{
+
+  color:#FFD43B;
 }
 
 .unsaved-star{
+
   color:#B8B8B8;
-  font-size:28px;
-  cursor:pointer;
-  transition:0.3s;
 }
 
 .saved-star:hover,
 .unsaved-star:hover{
-  transform:scale(1.1);
+
+  transform:scale(1.08);
 }
 
 /* TEXT */
 
 .degree-scholarship-card h3{
+
   font-family:'Poppins',sans-serif;
-  font-size:26px;
-  line-height:38px;
-  margin-bottom:24px;
+
+  font-size:22px;
+
+  line-height:30px;
+
+  margin-bottom:16px;
+
   position:relative;
+
   z-index:2;
+
+  color:#1F2937;
 }
 
 .degree-scholarship-card p{
+
   color:#6B7280;
-  margin-bottom:30px;
-  line-height:28px;
+
+  margin-bottom:14px;
+
+  line-height:24px;
+
   position:relative;
+
   z-index:2;
+
+  font-size:14px;
 }
 
 /* BUTTON */
 
 .degree-scholarship-card button{
+
   width:100%;
-  padding:16px;
+
+  padding:13px;
+
   border:none;
-  border-radius:18px;
+
+  border-radius:14px;
+
   background:#6D8EF7;
+
   color:white;
+
   font-weight:600;
+
   cursor:pointer;
-  transition:0.3s;
+
+  transition:0.25s;
+
   position:relative;
+
   z-index:2;
+
+  font-size:14px;
 }
 
 .degree-scholarship-card button:hover{
-  transform:translateY(-2px);
-  box-shadow:0 10px 24px rgba(109,142,247,0.28);
+
+  transform:translateY(-1px);
+
+  box-shadow:0 8px 18px rgba(109,142,247,0.18);
 }
 
 /* TABLET */
@@ -234,11 +370,8 @@
 @media (max-width:992px){
 
   .degree-page{
-    padding:50px 40px 80px;
-  }
 
-  .degree-scholarship-grid{
-    grid-template-columns:repeat(2,1fr);
+    padding:28px 28px 50px;
   }
 
 }
@@ -248,61 +381,76 @@
 @media (max-width:768px){
 
   .degree-page{
-    padding:40px 20px 60px;
+
+    padding:24px 16px 40px;
   }
 
   .degree-page-header{
-    margin-bottom:30px;
+
+    margin-bottom:22px;
   }
 
   .degree-page-header h1{
-    font-size:34px;
-    line-height:46px;
+
+    letter-spacing:-1px;
   }
 
   .modern-filter-bar{
-    margin-bottom:36px;
+
+    margin-bottom:24px;
   }
 
   .filter-toggle-btn{
+
     width:100%;
   }
 
   .filter-dropdown-modern{
-    width:100%;
-    left:0;
-    padding:20px;
-  }
 
-  .filter-grid{
-    gap:10px;
+    width:100%;
+
+    left:0;
+
+    padding:18px;
   }
 
   .degree-scholarship-grid{
+
     grid-template-columns:1fr;
-    gap:20px;
+
+    gap:14px;
   }
 
   .degree-scholarship-card{
-    padding:24px;
-    border-radius:24px;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    min-height:auto;
   }
 
   .degree-scholarship-card h3{
-    font-size:24px;
-    line-height:34px;
-    margin-bottom:18px;
+
+    font-size:20px;
+
+    line-height:28px;
+
+    margin-bottom:14px;
   }
 
   .degree-scholarship-card p{
-    font-size:14px;
-    line-height:24px;
-    margin-bottom:24px;
+
+    font-size:13px;
+
+    line-height:22px;
   }
 
   .degree-scholarship-card button{
-    padding:14px;
-    border-radius:16px;
+
+    padding:12px;
+
+    border-radius:12px;
   }
 
 }
