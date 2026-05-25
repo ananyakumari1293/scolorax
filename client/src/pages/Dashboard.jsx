@@ -6,6 +6,7 @@ from "../components/dashboard/DashboardHero";
 
 import DegreeGrid
 from "../components/dashboard/DegreeGrid";
+import AIChatbot from "../components/dashboard/AIChatbot";
 
 function Dashboard() {
 
@@ -27,6 +28,7 @@ function Dashboard() {
       <DashboardHero />
 
       <DegreeGrid />
+      <AIChatbot />
 
     </div>
   );

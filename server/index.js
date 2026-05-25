@@ -3,6 +3,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+import aiRoutes from "./routes/ai.js";
+
 import scholarshipRoutes
 from "./routes/scholarshipRoutes.js";
 
@@ -11,25 +13,49 @@ from "./routes/savedRoutes.js";
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO_URI)
-.then(() => {
+/* =========================
+   DATABASE CONNECTION
+========================= */
 
-  console.log(
-    "MongoDB Connected"
-  );
+mongoose
+  .connect(process.env.MONGO_URI)
 
-})
-.catch((error) => {
+  .then(() => {
 
-  console.log(error);
+    console.log(
+      "MongoDB Connected"
+    );
 
-});
+  })
+
+  .catch((error) => {
+
+    console.log(error);
+
+  });
+
+/* =========================
+   EXPRESS APP
+========================= */
 
 const app = express();
+
+/* =========================
+   MIDDLEWARE
+========================= */
 
 app.use(cors());
 
 app.use(express.json());
+
+/* =========================
+   ROUTES
+========================= */
+
+app.use(
+  "/api/ai",
+  aiRoutes
+);
 
 app.use(
   "/api/scholarships",
@@ -41,6 +67,10 @@ app.use(
   savedRoutes
 );
 
+/* =========================
+   HOME ROUTE
+========================= */
+
 app.get("/", (req, res) => {
 
   res.send(
@@ -48,6 +78,10 @@ app.get("/", (req, res) => {
   );
 
 });
+
+/* =========================
+   SERVER
+========================= */
 
 const PORT =
   process.env.PORT || 5000;
