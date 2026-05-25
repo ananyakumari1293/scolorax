@@ -8,7 +8,7 @@ import DegreeGrid
 from "../components/dashboard/DegreeGrid";
 
 import FeaturedScholarships
-from "../components/dashboard/FeaturedScholarships";
+from "../components/home/FeaturedScholarships";
 
 function Dashboard() {
 
