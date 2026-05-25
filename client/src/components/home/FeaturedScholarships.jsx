@@ -1,30 +1,64 @@
 import "./FeaturedScholarships.css";
 
 const scholarships = [
+
   {
-    title: "Tata Capital Pankh Scholarship",
-    degree: "B.Tech",
-    amount: "₹50,000",
-    deadline: "Sept 30",
+    title:
+      "IIM Ahmedabad Scholarship",
+
+    degree:
+      "MBA",
+
+    deadline:
+      "Oct 12",
+
+    college:
+      "IIM Ahmedabad",
+
+    link:
+      "https://www.iquanta.in/blog/iim-ahmedabad-scholarship/",
   },
 
   {
-    title: "INSPIRE Scholarship",
-    degree: "BSc",
-    amount: "₹80,000",
-    deadline: "Oct 12",
+    title:
+      "ISB Scholarship",
+
+    degree:
+      "MBA",
+
+    deadline:
+      "Nov 04",
+
+    college:
+      "ISB Hyderabad",
+
+    link:
+      "https://admitstreet.com/blog/isb-scholarships/",
   },
 
   {
-    title: "Central Sector Scholarship",
-    degree: "MBA",
-    amount: "₹20,000",
-    deadline: "Nov 04",
+    title:
+      "BITS Pilani Scholarship",
+
+    degree:
+      "B.Tech",
+
+    deadline:
+      "Sept 30",
+
+    college:
+      "BITS Pilani",
+
+    link:
+      "https://www.bits-pilani.ac.in/fee-structure-scholarships/",
   },
+
 ];
 
 function FeaturedScholarships() {
+
   return (
+
     <section className="featured-section">
 
       <div className="featured-header">
@@ -41,59 +75,79 @@ function FeaturedScholarships() {
 
       <div className="featured-grid">
 
-        {scholarships.map((item, index) => (
-          <div className="featured-card" key={index}>
+        {scholarships.map(
+          (item, index) => (
 
-            <div className="featured-top">
+            <div
+              className="featured-card"
+              key={index}
+            >
 
-              <span className="featured-degree">
-                {item.degree}
-              </span>
+              <div className="featured-top">
 
-              <span className="featured-save">
-                🔒
-              </span>
+                <span className="featured-degree">
+                  {item.degree}
+                </span>
+
+                <span className="featured-save">
+                  🔒
+                </span>
+
+              </div>
+
+              <h3>
+                {item.title}
+              </h3>
+
+              <div className="featured-info">
+
+                <span>
+                  Deadline:
+                  {" "}
+                  {item.deadline}
+                </span>
+
+                <span>
+                  {item.college}
+                </span>
+
+              </div>
+
+              <div className="featured-buttons">
+
+                <a
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+
+                  <button className="view-btn">
+                    View Details
+                  </button>
+
+                </a>
+
+                <button className="save-btn">
+                  Save
+                </button>
+
+              </div>
 
             </div>
 
-            <h3>
-              {item.title}
-            </h3>
-
-            <div className="featured-info">
-
-              <span>
-                Deadline: {item.deadline}
-              </span>
-
-              <span>
-                {item.amount}
-              </span>
-
-            </div>
-
-            <div className="featured-buttons">
-
-              <button className="view-btn">
-                View Details
-              </button>
-
-              <button className="save-btn">
-                Save
-              </button>
-
-            </div>
-
-          </div>
-        ))}
+          )
+        )}
 
       </div>
 
       <div className="guest-note">
+
         <p>
-          Login to save scholarships, personalize results,
+          Login to save scholarships,
+          personalize results,
           and access advanced filters.
         </p>
+
       </div>
 
     </section>
