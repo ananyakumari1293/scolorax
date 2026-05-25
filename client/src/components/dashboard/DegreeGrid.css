@@ -1,6 +1,6 @@
 .degree-grid-section{
 
-  padding:0 48px 80px;
+  padding:0 40px 60px;
 
   background:#FAF7F2;
 }
@@ -11,7 +11,7 @@
 
   grid-template-columns:repeat(2,1fr);
 
-  gap:24px;
+  gap:20px;
 }
 
 /* CARD */
@@ -20,13 +20,13 @@
 
   background:white;
 
-  border-radius:28px;
+  border-radius:24px;
 
-  padding:26px;
+  padding:22px;
 
   border:1px solid #EEE6DD;
 
-  transition:0.3s;
+  transition:0.25s;
 
   cursor:pointer;
 
@@ -34,7 +34,7 @@
 
   overflow:hidden;
 
-  min-height:300px;
+  min-height:260px;
 }
 
 .dashboard-degree-card::before{
@@ -43,26 +43,26 @@
 
   position:absolute;
 
-  top:-40px;
+  top:-35px;
 
-  right:-40px;
+  right:-35px;
 
-  width:120px;
+  width:100px;
 
-  height:120px;
+  height:100px;
 
   border-radius:50%;
 
   background:#F7D6E6;
 
-  opacity:0.4;
+  opacity:0.32;
 }
 
 .dashboard-degree-card:hover{
 
-  transform:translateY(-5px);
+  transform:translateY(-3px);
 
-  box-shadow:0 14px 32px rgba(247,214,230,0.22);
+  box-shadow:0 10px 24px rgba(247,214,230,0.18);
 
   border-color:#F3D4E2;
 }
@@ -71,7 +71,13 @@
 
 .degree-card-top{
 
-  margin-bottom:20px;
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  margin-bottom:16px;
 
   position:relative;
 
@@ -84,13 +90,18 @@
 
   color:#B7791F;
 
-  padding:7px 14px;
+  padding:6px 12px;
 
   border-radius:999px;
 
-  font-size:12px;
+  font-size:11px;
 
   font-weight:600;
+}
+
+.degree-icon{
+
+  font-size:24px;
 }
 
 /* TITLE */
@@ -99,19 +110,21 @@
 
   font-family:'Poppins',sans-serif;
 
-  font-size:26px;
+  font-size:22px;
 
-  line-height:38px;
+  line-height:32px;
 
   color:#1F2937;
 
-  margin-bottom:18px;
+  margin-bottom:14px;
 
   position:relative;
 
   z-index:2;
 
-  max-width:480px;
+  max-width:420px;
+
+  font-weight:600;
 }
 
 /* DESCRIPTION */
@@ -120,28 +133,28 @@
 
   color:#6B7280;
 
-  line-height:28px;
+  line-height:24px;
 
-  margin-bottom:28px;
+  margin-bottom:22px;
 
   position:relative;
 
   z-index:2;
 
-  font-size:16px;
+  font-size:14px;
 
-  max-width:520px;
+  max-width:480px;
 }
 
 /* BUTTON */
 
 .dashboard-degree-card button{
 
-  padding:14px 22px;
+  padding:12px 18px;
 
   border:none;
 
-  border-radius:16px;
+  border-radius:14px;
 
   background:#6D8EF7;
 
@@ -151,20 +164,20 @@
 
   cursor:pointer;
 
-  transition:0.3s;
+  transition:0.25s;
 
   position:relative;
 
   z-index:2;
 
-  font-size:15px;
+  font-size:14px;
 }
 
 .dashboard-degree-card button:hover{
 
-  transform:translateY(-2px);
+  transform:translateY(-1px);
 
-  box-shadow:0 10px 24px rgba(109,142,247,0.22);
+  box-shadow:0 8px 18px rgba(109,142,247,0.18);
 }
 
 /* TABLET */
@@ -173,7 +186,7 @@
 
   .degree-grid-section{
 
-    padding:0 32px 70px;
+    padding:0 28px 50px;
   }
 
   .degree-grid{
@@ -189,50 +202,50 @@
 
   .degree-grid-section{
 
-    padding:0 20px 50px;
+    padding:0 18px 40px;
   }
 
   .degree-grid{
 
     grid-template-columns:1fr;
 
-    gap:18px;
+    gap:16px;
   }
 
   .dashboard-degree-card{
 
-    padding:22px;
+    padding:20px;
 
-    border-radius:22px;
+    border-radius:20px;
 
     min-height:auto;
   }
 
   .dashboard-degree-card h3{
 
-    font-size:24px;
+    font-size:20px;
 
-    line-height:34px;
+    line-height:28px;
 
-    margin-bottom:14px;
+    margin-bottom:12px;
   }
 
   .dashboard-degree-card p{
 
-    line-height:25px;
+    line-height:22px;
 
-    font-size:14px;
+    font-size:13px;
 
-    margin-bottom:22px;
+    margin-bottom:18px;
   }
 
   .dashboard-degree-card button{
 
     width:100%;
 
-    padding:14px 18px;
+    padding:12px 16px;
 
-    border-radius:14px;
+    border-radius:12px;
   }
 
 }

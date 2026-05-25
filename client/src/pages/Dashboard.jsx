@@ -7,9 +7,6 @@ from "../components/dashboard/DashboardHero";
 import DegreeGrid
 from "../components/dashboard/DegreeGrid";
 
-import FeaturedScholarships
-from "../components/home/FeaturedScholarships";
-
 function Dashboard() {
 
   return (
@@ -30,8 +27,6 @@ function Dashboard() {
       <DashboardHero />
 
       <DegreeGrid />
-
-      <FeaturedScholarships />
 
     </div>
   );

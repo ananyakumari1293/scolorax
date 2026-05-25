@@ -1,6 +1,6 @@
 .dashboard-hero{
 
-  padding:28px 48px 24px;
+  padding:24px 40px 10px;
 
   background:#FAF7F2;
 }
@@ -13,9 +13,9 @@
 
   font-weight:600;
 
-  margin-bottom:12px;
+  margin-bottom:10px;
 
-  font-size:15px;
+  font-size:14px;
 }
 
 /* HEADING */
@@ -24,17 +24,19 @@
 
   font-family:'Poppins',sans-serif;
 
-  font-size:56px;
+  font-size:clamp(36px, 5vw, 58px);
 
-  line-height:68px;
+  line-height:1.08;
 
   color:#1F2937;
 
-  max-width:720px;
+  max-width:680px;
 
-  margin-bottom:20px;
+  margin-bottom:18px;
 
   letter-spacing:-2px;
+
+  font-weight:700;
 }
 
 /* SUBTEXT */
@@ -43,15 +45,15 @@
 
   display:block;
 
-  max-width:640px;
+  max-width:620px;
 
   color:#6B7280;
 
-  font-size:18px;
+  font-size:16px;
 
-  line-height:34px;
+  line-height:30px;
 
-  margin-bottom:30px;
+  margin-bottom:26px;
 }
 
 /* FILTERS */
@@ -60,14 +62,14 @@
 
   display:flex;
 
-  gap:14px;
+  gap:12px;
 
   flex-wrap:wrap;
 }
 
 .dashboard-filters button{
 
-  padding:12px 22px;
+  padding:10px 18px;
 
   border-radius:999px;
 
@@ -81,16 +83,16 @@
 
   border:1px solid #ECE6DD;
 
-  transition:0.3s;
+  transition:0.25s;
 
-  font-size:14px;
+  font-size:13px;
 }
 
 .dashboard-filters button:hover{
 
-  transform:translateY(-2px);
+  transform:translateY(-1px);
 
-  box-shadow:0 8px 20px rgba(247,214,230,0.24);
+  box-shadow:0 6px 18px rgba(247,214,230,0.16);
 }
 
 .active-filter{
@@ -108,23 +110,14 @@
 
   .dashboard-hero{
 
-    padding:28px 32px 22px;
-  }
-
-  .dashboard-hero h1{
-
-    font-size:48px;
-
-    line-height:58px;
-
-    max-width:620px;
+    padding:22px 28px 8px;
   }
 
   .dashboard-subtext{
 
-    font-size:17px;
+    font-size:15px;
 
-    line-height:30px;
+    line-height:28px;
   }
 
 }
@@ -135,48 +128,42 @@
 
   .dashboard-hero{
 
-    padding:24px 20px 12px;
+    padding:20px 18px 6px;
   }
 
   .dashboard-hero p{
 
-    font-size:14px;
+    font-size:13px;
   }
 
   .dashboard-hero h1{
 
-    font-size:38px;
-
-    line-height:48px;
-
     letter-spacing:-1px;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
   }
 
   .dashboard-subtext{
 
-    font-size:15px;
+    font-size:14px;
 
-    line-height:26px;
+    line-height:24px;
 
-    margin-bottom:24px;
+    margin-bottom:22px;
   }
 
   .dashboard-filters{
 
-    gap:10px;
+    gap:8px;
   }
 
   .dashboard-filters button{
 
-    width:100%;
+    width:auto;
 
-    text-align:center;
+    padding:10px 16px;
 
-    padding:12px 18px;
-
-    font-size:14px;
+    font-size:13px;
   }
 
 }
