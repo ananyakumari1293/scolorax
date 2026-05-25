@@ -9,13 +9,13 @@ from "../context/AuthContext";
 
 const scholarships = [
 
-  // ================= BTECH =================
+  // ================= B.TECH =================
 
   {
     title: "BITS Pilani Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "BITS Pilani",
     link:
       "https://www.bits-pilani.ac.in/fee-structure-scholarships/",
@@ -25,7 +25,7 @@ const scholarships = [
     title: "SRM Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "SRM University",
     link:
       "https://www.srmist.edu.in/policies/scholarship-policy/",
@@ -35,7 +35,7 @@ const scholarships = [
     title: "LPU Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "LPU",
     link:
       "https://www.lpu.in/scholarship/",
@@ -45,7 +45,7 @@ const scholarships = [
     title: "Thapar Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "Thapar University",
     link:
       "https://www.thapar.edu/admissions/pages/scholarships",
@@ -55,7 +55,7 @@ const scholarships = [
     title: "UPES Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "UPES",
     link:
       "https://www.upes.ac.in/admissions/scholarships",
@@ -65,7 +65,7 @@ const scholarships = [
     title: "VIT Scholarship",
     type: "Private",
     location: "India",
-    degree: "btech",
+    degree: "b.tech",
     college: "VIT Vellore",
     link:
       "https://viteee.vit.ac.in/",
@@ -228,21 +228,26 @@ function DegreePage() {
     scholarships.filter((item) => {
 
       const matchesDegree =
-        item.degree ===
+
+        item.degree.toLowerCase() ===
         degreeName.toLowerCase();
 
       const matchesType =
+
         selectedType === "All" ||
         item.type === selectedType;
 
       const matchesLocation =
+
         selectedLocation === "All" ||
         item.location === selectedLocation;
 
       return (
+
         matchesDegree &&
         matchesType &&
         matchesLocation
+
       );
     });
 
@@ -250,7 +255,7 @@ function DegreePage() {
 
     <div className="degree-page">
 
-      {/* HEADER */}
+      {/* ================= HEADER ================= */}
 
       <div className="degree-page-header">
 
@@ -264,12 +269,13 @@ function DegreePage() {
 
       </div>
 
-      {/* FILTER BAR */}
+      {/* ================= FILTER ================= */}
 
       <div className="modern-filter-bar">
 
         <button
           className="filter-toggle-btn"
+
           onClick={() =>
             setShowFilters(
               !showFilters
@@ -292,11 +298,16 @@ function DegreePage() {
             <div className="filter-grid">
 
               <div
+
                 className={
+
                   selectedType ===
                   "Government"
+
                     ? "filter-card active-card"
+
                     : "filter-card"
+
                 }
 
                 onClick={() => {
@@ -321,11 +332,16 @@ function DegreePage() {
               </div>
 
               <div
+
                 className={
+
                   selectedType ===
                   "Private"
+
                     ? "filter-card active-card"
+
                     : "filter-card"
+
                 }
 
                 onClick={() => {
@@ -360,11 +376,16 @@ function DegreePage() {
             <div className="filter-grid">
 
               <div
+
                 className={
+
                   selectedLocation ===
                   "India"
+
                     ? "filter-card active-card"
+
                     : "filter-card"
+
                 }
 
                 onClick={() => {
@@ -389,11 +410,16 @@ function DegreePage() {
               </div>
 
               <div
+
                 className={
+
                   selectedLocation ===
                   "Abroad"
+
                     ? "filter-card active-card"
+
                     : "filter-card"
+
                 }
 
                 onClick={() => {
@@ -425,7 +451,7 @@ function DegreePage() {
 
       </div>
 
-      {/* SCHOLARSHIPS */}
+      {/* ================= SCHOLARSHIPS ================= */}
 
       <div className="degree-scholarship-grid">
 
@@ -446,11 +472,15 @@ function DegreePage() {
                 <span
 
                   className={
+
                     savedItems.includes(
                       item.title
                     )
+
                       ? "saved-star"
+
                       : "unsaved-star"
+
                   }
 
                   onClick={() =>
@@ -459,11 +489,15 @@ function DegreePage() {
                 >
 
                   {
+
                     savedItems.includes(
                       item.title
                     )
+
                       ? "★"
+
                       : "☆"
+
                   }
 
                 </span>
