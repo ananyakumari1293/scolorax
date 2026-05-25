@@ -165,31 +165,57 @@ function DegreePage() {
               Scholarship Type
             </h4>
 
-            <div className="filter-options">
+            <div className="filter-grid">
 
-              <button
-                onClick={() =>
-                  setSelectedType("All")
+              <div
+                className={
+                  selectedType === "Government"
+                  ? "filter-card active-card"
+                  : "filter-card"
                 }
-              >
-                All
-              </button>
+                onClick={() => {
 
-              <button
-                onClick={() =>
-                  setSelectedType("Government")
-                }
-              >
-                Government
-              </button>
+                  setSelectedType(
+                    "Government"
+                  );
 
-              <button
-                onClick={() =>
-                  setSelectedType("Private")
-                }
+                  setShowFilters(false);
+
+                }}
               >
-                Private
-              </button>
+                <div className="filter-icon">
+                  🏛️
+                </div>
+
+                <span>
+                  Government
+                </span>
+              </div>
+
+              <div
+                className={
+                  selectedType === "Private"
+                  ? "filter-card active-card"
+                  : "filter-card"
+                }
+                onClick={() => {
+
+                  setSelectedType(
+                    "Private"
+                  );
+
+                  setShowFilters(false);
+
+                }}
+              >
+                <div className="filter-icon">
+                  🏢
+                </div>
+
+                <span>
+                  Private
+                </span>
+              </div>
 
             </div>
 
@@ -198,31 +224,57 @@ function DegreePage() {
               Location
             </h4>
 
-            <div className="filter-options">
+            <div className="filter-grid">
 
-              <button
-                onClick={() =>
-                  setSelectedLocation("All")
+              <div
+                className={
+                  selectedLocation === "India"
+                  ? "filter-card active-card"
+                  : "filter-card"
                 }
-              >
-                All
-              </button>
+                onClick={() => {
 
-              <button
-                onClick={() =>
-                  setSelectedLocation("India")
-                }
-              >
-                India
-              </button>
+                  setSelectedLocation(
+                    "India"
+                  );
 
-              <button
-                onClick={() =>
-                  setSelectedLocation("Abroad")
-                }
+                  setShowFilters(false);
+
+                }}
               >
-                Abroad
-              </button>
+                <div className="filter-icon">
+                  🇮🇳
+                </div>
+
+                <span>
+                  India
+                </span>
+              </div>
+
+              <div
+                className={
+                  selectedLocation === "Abroad"
+                  ? "filter-card active-card"
+                  : "filter-card"
+                }
+                onClick={() => {
+
+                  setSelectedLocation(
+                    "Abroad"
+                  );
+
+                  setShowFilters(false);
+
+                }}
+              >
+                <div className="filter-icon">
+                  🌍
+                </div>
+
+                <span>
+                  Abroad
+                </span>
+              </div>
 
             </div>
 

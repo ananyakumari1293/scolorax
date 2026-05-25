@@ -279,5 +279,60 @@
     padding:14px;
     border-radius:16px;
   }
+  .filter-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+
+  margin-bottom:28px;
+}
+
+.filter-card{
+  background:#F8F8F8;
+
+  border:1px solid #ECECEC;
+
+  border-radius:20px;
+
+  padding:20px;
+
+  cursor:pointer;
+
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:10px;
+
+  transition:0.3s;
+
+  font-weight:600;
+
+  color:#1F2937;
+}
+
+.filter-card:hover{
+  transform:translateY(-3px);
+
+  background:#EEF4FF;
+}
+
+.active-card{
+  background:#6D8EF7;
+
+  color:white;
+
+  border-color:#6D8EF7;
+
+  box-shadow:0 12px 24px rgba(109,142,247,0.25);
+}
+
+.filter-card span{
+  font-size:14px;
+}
 
 }
