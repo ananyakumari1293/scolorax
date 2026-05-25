@@ -4,6 +4,8 @@
   padding:60px 80px 100px;
 }
 
+/* HEADER */
+
 .degree-page-header{
   margin-bottom:40px;
 }
@@ -21,7 +23,7 @@
   line-height:72px;
 }
 
-/* MODERN FILTER */
+/* FILTER */
 
 .modern-filter-bar{
   margin-bottom:50px;
@@ -30,21 +32,13 @@
 
 .filter-toggle-btn{
   padding:14px 24px;
-
   border:none;
-
   border-radius:18px;
-
   background:white;
-
   border:1px solid #EEE6DD;
-
   cursor:pointer;
-
   font-weight:600;
-
   transition:0.3s;
-
   box-shadow:0 8px 20px rgba(0,0,0,0.04);
 }
 
@@ -52,24 +46,18 @@
   transform:translateY(-2px);
 }
 
+/* DROPDOWN */
+
 .filter-dropdown-modern{
   position:absolute;
-
   top:70px;
   left:0;
-
   width:320px;
-
   background:white;
-
   border-radius:24px;
-
   padding:24px;
-
   border:1px solid #EEE6DD;
-
   box-shadow:0 20px 40px rgba(0,0,0,0.08);
-
   z-index:100;
 }
 
@@ -78,30 +66,49 @@
   color:#1F2937;
 }
 
-.filter-options{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+/* FILTER GRID */
 
-  margin-bottom:24px;
+.filter-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-bottom:28px;
 }
 
-.filter-options button{
-  padding:10px 18px;
-
-  border-radius:999px;
-
-  border:none;
-
-  background:#F7F7F7;
-
+.filter-card{
+  background:#F8F8F8;
+  border:1px solid #ECECEC;
+  border-radius:20px;
+  padding:20px;
   cursor:pointer;
-
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
   transition:0.3s;
+  font-weight:600;
+  color:#1F2937;
 }
 
-.filter-options button:hover{
-  background:#E9EEFF;
+.filter-card:hover{
+  transform:translateY(-3px);
+  background:#EEF4FF;
+}
+
+.active-card{
+  background:#6D8EF7;
+  color:white;
+  border-color:#6D8EF7;
+  box-shadow:0 12px 24px rgba(109,142,247,0.25);
+}
+
+.filter-card span{
+  font-size:14px;
+}
+
+.filter-icon{
+  font-size:24px;
 }
 
 /* GRID */
@@ -112,10 +119,12 @@
   gap:28px;
 }
 
+/* CARD */
+
 .degree-scholarship-card{
   background:white;
   border-radius:30px;
-  padding:30px;
+  padding:26px;
   border:1px solid #EEE6DD;
   transition:0.3s;
   position:relative;
@@ -139,13 +148,13 @@
   box-shadow:0 14px 32px rgba(247,214,230,0.35);
 }
 
+/* TOP */
+
 .degree-card-top{
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   margin-bottom:24px;
-
   position:relative;
   z-index:2;
 }
@@ -159,15 +168,33 @@
   font-weight:600;
 }
 
-.degree-card-top span:last-child{
-  font-size:24px;
+/* STAR */
+
+.saved-star{
+  color:#FFD43B;
+  font-size:28px;
   cursor:pointer;
+  transition:0.3s;
 }
+
+.unsaved-star{
+  color:#B8B8B8;
+  font-size:28px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.saved-star:hover,
+.unsaved-star:hover{
+  transform:scale(1.1);
+}
+
+/* TEXT */
 
 .degree-scholarship-card h3{
   font-family:'Poppins',sans-serif;
-  font-size:30px;
-  line-height:42px;
+  font-size:26px;
+  line-height:38px;
   margin-bottom:24px;
   position:relative;
   z-index:2;
@@ -180,6 +207,8 @@
   position:relative;
   z-index:2;
 }
+
+/* BUTTON */
 
 .degree-scholarship-card button{
   width:100%;
@@ -202,7 +231,7 @@
 
 /* TABLET */
 
-@media (max-width: 992px){
+@media (max-width:992px){
 
   .degree-page{
     padding:50px 40px 80px;
@@ -216,7 +245,7 @@
 
 /* MOBILE */
 
-@media (max-width: 768px){
+@media (max-width:768px){
 
   .degree-page{
     padding:40px 20px 60px;
@@ -245,12 +274,8 @@
     padding:20px;
   }
 
-  .filter-options{
+  .filter-grid{
     gap:10px;
-  }
-
-  .filter-options button{
-    flex:1;
   }
 
   .degree-scholarship-grid{
@@ -279,84 +304,5 @@
     padding:14px;
     border-radius:16px;
   }
-  .filter-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-
-  margin-bottom:28px;
-}
-
-.filter-card{
-  background:#F8F8F8;
-
-  border:1px solid #ECECEC;
-
-  border-radius:20px;
-
-  padding:20px;
-
-  cursor:pointer;
-
-  display:flex;
-
-  flex-direction:column;
-
-  align-items:center;
-
-  justify-content:center;
-
-  gap:10px;
-
-  transition:0.3s;
-
-  font-weight:600;
-
-  color:#1F2937;
-}
-
-.filter-card:hover{
-  transform:translateY(-3px);
-
-  background:#EEF4FF;
-}
-
-.active-card{
-  background:#6D8EF7;
-
-  color:white;
-
-  border-color:#6D8EF7;
-
-  box-shadow:0 12px 24px rgba(109,142,247,0.25);
-}
-
-.filter-card span{
-  font-size:14px;
-}
-.saved-star{
-  color:#FFD43B;
-
-  font-size:28px;
-
-  cursor:pointer;
-
-  transition:0.3s;
-}
-
-.unsaved-star{
-  color:#B8B8B8;
-
-  font-size:28px;
-
-  cursor:pointer;
-
-  transition:0.3s;
-}
-
-.saved-star:hover,
-.unsaved-star:hover{
-  transform:scale(1.1);
-}
 
 }
