@@ -1,8 +1,29 @@
 import "./SavedScholarships.css";
 
+import { useEffect, useState }
+from "react";
+
 function SavedScholarships() {
 
+  const [savedScholarships,
+    setSavedScholarships] =
+    useState([]);
+
+  useEffect(() => {
+
+    const savedData =
+      JSON.parse(
+        localStorage.getItem(
+          "savedScholarships"
+        )
+      ) || [];
+
+    setSavedScholarships(savedData);
+
+  }, []);
+
   return (
+
     <div className="saved-page">
 
       <div className="saved-header">
@@ -19,38 +40,73 @@ function SavedScholarships() {
 
       <div className="saved-grid">
 
-        <div className="saved-card">
+        {savedScholarships.length === 0 ? (
 
-          <div className="saved-top">
+          <div className="empty-saved">
 
-            <span>
-              Private
-            </span>
+            <h3>
+              No saved scholarships yet
+            </h3>
 
-            <span>
-              ☆
-            </span>
+            <p>
+              Start saving scholarships
+              to see them here.
+            </p>
 
           </div>
 
-          <h3>
-            Tata Capital Pankh Scholarship
-          </h3>
+        ) : (
 
-          <p>
-            Financial assistance for
-            undergraduate students.
-          </p>
+          savedScholarships.map(
+            (item, index) => (
 
-          <button>
-            View Scholarship
-          </button>
+              <div
+                className="saved-card"
+                key={index}
+              >
 
-        </div>
+                <div className="saved-top">
+
+                  <span>
+                    {item.type || "Scholarship"}
+                  </span>
+
+                  <span>
+                    ⭐
+                  </span>
+
+                </div>
+
+                <h3>
+                  {item.title}
+                </h3>
+
+                <p>
+                  {item.description}
+                </p>
+
+                <button
+                  onClick={() =>
+                    window.open(
+                      item.link,
+                      "_blank"
+                    )
+                  }
+                >
+                  View Scholarship
+                </button>
+
+              </div>
+
+            )
+          )
+
+        )}
 
       </div>
 
     </div>
+
   );
 }
 
